@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "RBFresh WordPress Theme with BEM and SASS",
   "scripts": {
-    "sass": "sass --watch assets/sass/main.scss:assets/css/main.css --style compressed --quiet-deps",
-    "sass:build": "sass assets/sass/main.scss:assets/css/main.css --style compressed --quiet-deps"
+    "sass": "sass --load-path=/Users/kirk/Sites/resources/bluegrass/3_rootBG/node_modules --watch assets/sass/main.scss:assets/css/main.css --style compressed --quiet-deps",
+    "sass:build": "sass --load-path=/Users/kirk/Sites/resources/bluegrass/3_rootBG/node_modules assets/sass/main.scss:assets/css/main.css --style compressed --quiet-deps"
   },
   "author": "Your Name",
   "license": "GPL-2.0-or-later",

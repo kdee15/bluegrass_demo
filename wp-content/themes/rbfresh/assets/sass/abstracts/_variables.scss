@@ -1,3 +1,5 @@
+// 0. CONFIG [ 0.1. CUSTOM VARIABLES ] ################################################################################
+
 // Import built-in modules
 @use "sass:color";
 @use "sass:math";
@@ -23,7 +25,56 @@ $gutter: 20px;
 $sidebar-width: 300px;
 
 // Breakpoints
-$breakpoint-sm: 576px;
-$breakpoint-md: 768px;
-$breakpoint-lg: 992px;
-$breakpoint-xl: 1200px;
+
+// Define breakpoints as pixel values
+$breakpoint-xs: 576px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 992px;
+$breakpoint-lg: 1200px;
+$breakpoint-xl: 1400px;
+
+// B. SIZES +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// B.1. PADDING & MARGINS ---------------------------------
+
+$base-xxxl: 100px;
+$base-xxl: 75px;
+$base-xl: 60px;
+$base-lg: 45px;
+$base-md: 30px;
+$base: 15px;
+$base-sm: 8px;
+$base-xs: 4px;
+
+// B.1. END -----------------------------------------------
+
+// B.2. FONT SIZES ----------------------------------------
+
+$core-h1: 35px;
+$core-h2: 24px;
+$core-title: 20px;
+$core: 12px;
+
+// B.2. END -----------------------------------------------
+
+// B. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// C. COLORS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+$royal: #001844;
+$royal-l: #334669;
+$blue-lt: #29abe2;
+
+$black: #000000;
+$grey-f2: #f2f2f2;
+$grey-cc: #cccccc;
+$grey-80: #808080;
+$grey-lt: #b2bac7;
+$grey-blue: #808ba1;
+$grey-b3: #b3b5b4;
+$grey-ce: #cececf;
+$white: #ffffff;
+
+// C. END +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// END OF FILE ########################################################################################################

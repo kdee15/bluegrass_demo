@@ -9,20 +9,11 @@
     justify-content: center;
     margin: 0;
     padding: 0;
-
-    @include respond-below(md) {
-      flex-direction: column;
-      display: none; // Hidden by default on mobile
-    }
   }
 
   &__item {
     margin: 0 15px;
     position: relative;
-
-    @include respond-below(md) {
-      margin: 5px 0;
-    }
 
     &--active {
       .nav__link {
@@ -54,10 +45,6 @@
     font-size: 0.875rem;
     cursor: pointer;
     margin: 0 auto 15px;
-
-    @include respond-below(md) {
-      display: block;
-    }
 
     &--active {
       background-color: $color-background;
