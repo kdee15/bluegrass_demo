@@ -1,0 +1,15 @@
+FROM wordpress:latest
+
+# Install Node.js and npm
+RUN apt-get update && apt-get install -y \
+    nodejs \
+    npm \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set working directory
+WORKDIR /var/www/html/wp-content/themes/rbfresh
+
+# Copy package.json and install dependencies
+COPY package.json .
+RUN npm install

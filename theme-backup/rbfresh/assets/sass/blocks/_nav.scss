@@ -1,0 +1,66 @@
+// Navigation block
+.nav {
+  text-align: center;
+  border-top: 1px solid $color-border;
+  padding-top: 15px;
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+
+    @include respond-below(md) {
+      flex-direction: column;
+      display: none; // Hidden by default on mobile
+    }
+  }
+
+  &__item {
+    margin: 0 15px;
+    position: relative;
+
+    @include respond-below(md) {
+      margin: 5px 0;
+    }
+
+    &--active {
+      .nav__link {
+        color: $color-primary;
+      }
+    }
+  }
+
+  &__link {
+    color: $color-secondary;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 5px 0;
+    display: block;
+    transition: $transition-base;
+
+    &:hover,
+    &--active {
+      color: $color-primary;
+    }
+  }
+
+  &__toggle {
+    display: none;
+    background: none;
+    border: 1px solid $color-border;
+    padding: 8px 15px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    margin: 0 auto 15px;
+
+    @include respond-below(md) {
+      display: block;
+    }
+
+    &--active {
+      background-color: $color-background;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+// Header block
+.header {
+  background-color: $color-white;
+  padding: $gutter;
+  border-bottom: 1px solid $color-border;
+
+  &__branding {
+    text-align: center;
+    margin-bottom: $gutter;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+
+    &-link {
+      color: $color-secondary;
+      text-decoration: none;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+
+  &__description {
+    margin: 5px 0 0;
+    font-size: 1rem;
+    color: $color-text-light;
+    font-weight: 300;
+  }
+
+  &__logo {
+    &-wrap {
+      text-align: center;
+    }
+
+    &-link {
+      display: inline-block;
+    }
+
+    &-img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}

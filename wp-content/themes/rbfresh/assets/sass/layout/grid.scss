@@ -1,0 +1,48 @@
+// Simple grid system
+.container {
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 0 $gutter;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -#{$gutter / 2};
+
+  @include clearfix;
+}
+
+.col {
+  flex: 1 0 0;
+  padding: 0 $gutter / 2;
+
+  // Responsive modifiers
+  @for $i from 1 through 12 {
+    &--#{$i} {
+      flex: 0 0 calc(#{$i / 12} * 100%);
+      max-width: calc(#{$i / 12} * 100%);
+    }
+
+    &--sm-#{$i} {
+      @include respond-to(sm) {
+        flex: 0 0 calc(#{$i / 12} * 100%);
+        max-width: calc(#{$i / 12} * 100%);
+      }
+    }
+
+    &--md-#{$i} {
+      @include respond-to(md) {
+        flex: 0 0 calc(#{$i / 12} * 100%);
+        max-width: calc(#{$i / 12} * 100%);
+      }
+    }
+
+    &--lg-#{$i} {
+      @include respond-to(lg) {
+        flex: 0 0 calc(#{$i / 12} * 100%);
+        max-width: calc(#{$i / 12} * 100%);
+      }
+    }
+  }
+}
