@@ -33,19 +33,22 @@
     width: 100%;
     height: 100%;
     z-index: 1;
+    min-height: 550px;
   }
 
   &__img {
-    width: 100%;
+    width: auto;
     height: 100%;
     object-fit: cover;
+    position: absolute;
+    background-position: top center;
   }
 
   &__content {
     position: relative;
     z-index: 3;
     color: #fff;
-    padding: 2rem 24px 0;
+    padding: 70px 24px 0;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -58,6 +61,8 @@
   }
 
   &__title {
+    margin-bottom: 24px;
+    font-weight: 800;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s;
@@ -79,21 +84,8 @@
     }
   }
 
-  &__nav {
-    color: #fff;
-    z-index: 4;
-  }
-
-  &__pagination {
-    z-index: 4;
-
-    .swiper-pagination-bullet {
-      background: #fff;
-    }
-
-    .swiper-pagination-bullet-active {
-      background: #fff;
-    }
+  .btn {
+    margin-top: 24px;
   }
 
   svg {
@@ -106,8 +98,9 @@
         &--left {
           top: 0;
           &.svg__mobile {
-            top: -3px;
+            top: 0;
             left: 0;
+            height: 10%;
           }
 
           &.svg__desk {
@@ -155,43 +148,6 @@
   }
 }
 
-// SVG Animation
-@keyframes morphPath {
-  0% {
-    d: path("M-.5,680h728.5V0H-.5s0,680,0,680Z");
-  }
-  100% {
-    d: path("M-0.5 680H728L597 5.03583e-05L-0.5 0V680Z");
-  }
-}
-
-// Responsive adjustments
-@media (max-width: 768px) {
-  .hero-banner {
-    &__title {
-      font-size: 2rem;
-    }
-
-    &__text {
-      font-size: 1rem;
-    }
-  }
-}
-
-// Swiper overrides
-.swiper-button-next,
-.swiper-button-prev {
-  color: #fff;
-}
-
-.swiper-pagination-bullet {
-  background: #fff;
-
-  &--active {
-    background: #fff;
-  }
-}
-
 .hero-banner__nav {
   background-position: center;
   background-size: contain;
@@ -228,20 +184,6 @@
 
 // 767 DN
 @include abstracts.respond-below(sm) {
-  .hero-banner {
-    svg {
-      &.hero-banner {
-        &__svg {
-          &--left {
-            top: 0;
-            &.svg__mobile {
-              height: 20%;
-            }
-          }
-        }
-      }
-    }
-  }
 }
 
 // B.1. END --------------------------------
@@ -286,25 +228,24 @@
 
     &__content {
       position: relative;
-      z-index: 3;
       height: 100%;
       width: 100%;
-      max-width: 500px;
+      max-width: 550px;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
-      color: #fff;
       padding: 0 0 0 120px;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
       z-index: 5;
 
       .swiper-slide-active & {
         opacity: 1;
         transform: translateY(0);
       }
+    }
+
+    &__title {
+      margin-bottom: 32px;
     }
 
     svg {

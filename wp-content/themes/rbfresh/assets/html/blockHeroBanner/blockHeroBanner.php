@@ -26,7 +26,7 @@ $carousel_query = new WP_Query($args);
                             <div class="hero-banner__text fnt20">
                                 <?php the_content(); ?>
                             </div>
-                            <a class="btn btn--red fnt20" href="<?php the_field('cta_url') ?>">
+                            <a class="btn btn--red fnt16" href="<?php the_field('cta_url') ?>">
                                 <?php the_field('cta_label') ?>    
                             </a>
                         </div>
@@ -53,7 +53,7 @@ $carousel_query = new WP_Query($args);
                         <svg class="hero-banner__svg--two" width="720" height="90" viewBox="0 0 720 90" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1.17093e-05 45.0003L720 90.0002L720 0.000244141L1.17093e-05 45.0003Z" fill="#221F20" fill-opacity="0.3"/>
                         </svg>
-                        <svg class="hero-banner__svg--three" width="1440" height="45" viewBox="0 0 1440 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="hero-banner__svg--three" width="1440" height="45" viewBox="0 0 1440 45" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                             <path d="M1.94846e-05 45.0004L1440 45.0002L720 0.000307085L1.94846e-05 45.0004Z" fill="white"/>
                         </svg>
                     </div>
@@ -76,10 +76,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const swiper = new Swiper('.hero-banner__swiper', {
         loop: true,
+        parallax: true,
         speed: 1000,
         navigation: {
             nextEl: '.hero-banner__nav--next',
             prevEl: '.hero-banner__nav--prev',
+        },
+        breakpoints: {
+          320: {
+            navigation: {
+              enabled: false,
+            },
+          },
+          768: {
+            navigation: {
+              enabled: true,
+            },
+          }
         },
         pagination: {
             el: '.hero-banner__pagination',
