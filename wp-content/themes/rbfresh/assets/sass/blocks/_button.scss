@@ -12,8 +12,25 @@
 .btn {
   padding: 14px 24px;
   border-radius: 50px;
+  font-weight: 700;
+}
+
+.btn--small {
+  padding: 8px 12px;
+  border-radius: 50px;
+  @include var.font(12, 120%);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.btn {
   &--red {
     background-color: var.$theme-red;
+    color: white;
+  }
+  &--white-hollow {
+    background-color: transparent;
+    border: 1px solid white;
     color: white;
   }
 }

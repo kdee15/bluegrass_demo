@@ -138,6 +138,39 @@ function card_grid() {
   
 // A.2.2. End -----------------------------------------------------------------------------------------------------
 
+// A.2.2. SIX CARD GRID -------------------------------------------------------------------------------------------
+
+function two_column() {
+    $labels = array(
+      'Title'              => _x( 'Two Column', 'post type general name' ),
+      'singular_name'      => _x( 'Two Column', 'post type singular name' ),
+      'add_new'            => _x( 'Add New', 'Two Column' ),
+      'add_new_item'       => __( 'Add New Two Column' ),
+      'edit_item'          => __( 'Edit Two Column' ),
+      'new_item'           => __( 'New Two Column' ),
+      'all_items'          => __( 'All Two Column' ),
+      'view_item'          => __( 'View Two Column' ),
+      'parent_item_colon'  => '',
+      'menu_name'          => 'Two Column'
+    );
+  
+    $args = array(
+      'labels'         => $labels,
+      'description'   => 'Two Column Layout',
+      'public'        => true,
+      'menu_position' => 5,
+      'supports'      => array( 'title', 'editor', 'thumbnail', 'taxonomies', 'categories', 'media', 'content' ),
+      'has_archive'   => true,
+  
+    );
+  
+    register_post_type( 'two_column', $args );
+  }
+  
+  add_action( 'init', 'two_column' );
+  
+// A.2.2. End -----------------------------------------------------------------------------------------------------
+
 
 // Register widget area (sidebar)
 function rbfresh_widgets_init() {

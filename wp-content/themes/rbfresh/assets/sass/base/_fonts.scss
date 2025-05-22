@@ -13,14 +13,30 @@ h1 *,
   @include typo.scaledFont(40, 40, 65, 125%, 125%, 125%, 125%);
 }
 
+h3,
+h3 *,
+.fntH3,
+.fntH3 * {
+  @include typo.scaledFont(22, 22, 24, 125%, 125%, 125%, 125%);
+}
+
 .fnt20,
 .fnt20 * {
   @include typo.font(20, 150%);
 }
 
+.fnt18,
+.fnt18 * {
+  @include typo.font(18, 150%);
+}
+
 .fnt16,
 .fnt16 * {
   @include typo.font(16, 125%);
+}
+.fnt12,
+.fnt12 * {
+  @include typo.font(12, 125%);
 }
 
 // A.1. END -----------------------------------------------

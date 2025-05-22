@@ -1,0 +1,70 @@
+// BLOCK [ CARD GRID ] ################################################################################################
+// A. GLOBAL STYLES ---------------------------------------
+
+// A.0. IMPORTS -------------------------------------------
+
+@use "../abstracts" as var;
+
+// A.0. IMPORTS END ---------------------------------------
+
+.two-column {
+  // A.1. GRID STYLE --------------------------------------
+
+  background-color: #fff;
+
+  .container {
+    max-width: 1180px;
+  }
+
+  &__image {
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  &__title {
+    &--first {
+      font-family: var.$kids;
+      display: block;
+    }
+    &--second {
+      font-family: var.$kids;
+      display: block;
+    }
+  }
+
+  // A.1. END ---------------------------------------------
+
+  // B. MEDIA QUERIES -------------------------------------
+
+  // B.1. GRACEFUL DEGRADATION -------------
+
+  // 767 DN
+  @include var.respond-below(sm) {
+  }
+
+  // B.1. END ------------------------------
+
+  // B.2. PROGRESSIVE ENHANCEMENT ----------
+
+  @include var.respond-above(sm) {
+  }
+
+  @include var.respond-above(md) {
+    &__image {
+      order: 1;
+    }
+    &__body {
+      order: 2;
+    }
+  }
+
+  @include var.respond-above(lg) {
+  }
+
+  // B.2. END ------------------------------
+  // B. END -----------------------------------------------
+}
+
+// END OF FILE ########################################################################################################

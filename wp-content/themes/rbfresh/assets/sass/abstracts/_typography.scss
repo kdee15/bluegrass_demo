@@ -8,6 +8,14 @@
 
 $font: "Montserrat", sans-serif;
 
+@font-face {
+  font-family: AmazingKids;
+  src: url("../../fonts/AmazingKids.ttf") format("truetype");
+  src: url("../../fonts/AmazingKids.woff") format("woff");
+}
+
+$kids: AmazingKids, sans-serif;
+
 // A.2. RESPONSIVE FONT VARIABLES -------------------------
 // font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
 
@@ -63,7 +71,6 @@ $sf-lineheight-xl: 30;
 @mixin font($size, $lineheight) {
   font-size: #{$size}px;
   line-height: $lineheight;
-  font-optical-sizing: auto;
 }
 // Fixed --------------------
 

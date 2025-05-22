@@ -102,6 +102,17 @@ $container-padding-x: math.div($grid-gutter-width, 2);
   @include make-row();
 }
 
+// No gutters
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+  > .col,
+  > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
 // Columns
 @for $i from 1 through $grid-columns {
   .col-#{$i} {
