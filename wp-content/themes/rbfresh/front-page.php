@@ -9,7 +9,7 @@ get_header(); ?>
 
 <main id="primary" class="site-main">
 	<?php get_template_part( 'assets/html/blockHeroBanner/blockHeroBanner' ); ?>
-	<?php get_template_part( 'assets/html/sectionCardGrid' ); ?>
+	<?php get_template_part( 'assets/html/blockCardGrid/blockCardGrid' ); ?>
 </main>
 
 <?php

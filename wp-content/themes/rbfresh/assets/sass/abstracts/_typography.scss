@@ -1,0 +1,72 @@
+// GLOBAL [ TYPOGRAPHY ]  #############################################################################################
+
+@use "mixins" as abstracts;
+
+// A. FONT SOURCE +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+$font: "Montserrat", sans-serif;
+
+// A.2. RESPONSIVE FONT VARIABLES -------------------------
+// font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
+
+$view-min-xs: 360;
+$view-max-md: 1400;
+
+$sf-min-xs: 20;
+$sf-max-md: 22;
+$sf-max: 22;
+
+$sf-lineheight: 26;
+$sf-lineheight-md: 30;
+$sf-lineheight-lg: 30;
+$sf-lineheight-xl: 30;
+
+// A.2. END -----------------------------------------------
+
+// A.3. TYPOGRAPHY STYING ---------------------------------
+
+// Scaled -------------------
+
+@mixin scaledFont(
+  $sf-min-xs,
+  $sf-max-md,
+  $sf-max,
+  $sf-lineheight,
+  $sf-lineheight-md,
+  $sf-lineheight-lg,
+  $sf-lineheight-xl
+) {
+  font-size: calc(
+    #{$sf-min-xs}px + (#{$sf-max-md} - #{$sf-min-xs}) *
+      ((100vw - #{$view-min-xs}px) / (#{$view-max-md} - #{$view-min-xs}))
+  );
+  line-height: $sf-lineheight;
+
+  @include abstracts.respond-above(md) {
+    line-height: $sf-lineheight-md;
+  }
+
+  @include abstracts.respond-above(lg) {
+    line-height: $sf-lineheight-lg;
+  }
+
+  @include abstracts.respond-above(xl) {
+    font-size: #{$sf-max}px;
+    line-height: $sf-lineheight-xl;
+  }
+}
+// END: Scaled --------------
+
+// Fixed --------------------
+@mixin font($size, $lineheight) {
+  font-size: #{$size}px;
+  line-height: $lineheight;
+  font-optical-sizing: auto;
+}
+// Fixed --------------------
+
+// A.3. END -----------------------------------------------
+
+// END OF FILE ########################################################################################################

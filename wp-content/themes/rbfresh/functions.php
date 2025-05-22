@@ -70,40 +70,38 @@ add_action('wp_enqueue_scripts', 'rbfresh_scripts');
 require get_template_directory() . '/inc/dynamic-css.php';
 
 
-
-
 // A.2 CUSTOM CONTENT TYPES +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // A.2.1. HOMEPAGE CAROUSEL ---------------------------------------------------------------------------------------
 
 function carousel() {
-    $labels = array(
-      'Title'              => _x( 'Hero Carousel', 'post type general name' ),
-      'singular_name'      => _x( 'Carousel Slides', 'post type singular name' ),
-      'add_new'            => _x( 'Add New', 'Carousel Slide' ),
-      'add_new_item'       => __( 'Add New Carousel Slide' ),
-      'edit_item'          => __( 'Edit Carousel Slide' ),
-      'new_item'           => __( 'New Carousel Slide' ),
-      'all_items'          => __( 'All Carousel Slides' ),
-      'view_item'          => __( 'View Carousel Slide' ),
-      'parent_item_colon'  => '',
-      'menu_name'          => 'Hero Carousel'
-    );
-  
-    $args = array(
-      'labels'         => $labels,
-      'description'   => 'A list of Carousel Slides',
-      'public'        => true,
-      'menu_position' => 3,
-      'supports'      => array( 'title', 'editor', 'thumbnail', 'taxonomies', 'categories', 'media', 'content' ),
-      'has_archive'   => true,
-  
-    );
-  
-    register_post_type( 'carousel', $args );
-  }
-  
-  add_action( 'init', 'carousel' );
+  $labels = array(
+    'Title'              => _x( 'Carousel', 'post type general name' ),
+    'singular_name'      => _x( 'Carousel Pics', 'post type singular name' ),
+    'add_new'            => _x( 'Add New', 'Carousel Pic' ),
+    'add_new_item'       => __( 'Add New Carousel Pic' ),
+    'edit_item'          => __( 'Edit Carousel' ),
+    'new_item'           => __( 'New Carousel Pic' ),
+    'all_items'          => __( 'All Carousel Pics' ),
+    'view_item'          => __( 'View Carousel' ),
+    'parent_item_colon'  => '',
+    'menu_name'          => 'Carousel'
+  );
+
+  $args = array(
+    'labels'         => $labels,
+    'description'   => 'A list of Carousel Pics',
+    'public'        => true,
+    'menu_position' => 3,
+    'supports'      => array( 'title', 'editor', 'thumbnail', 'taxonomies', 'categories', 'media', 'content' ),
+    'has_archive'   => true,
+
+  );
+
+  register_post_type( 'carousel', $args );
+}
+
+add_action( 'init', 'carousel' );
   
 // A.2.1. End -----------------------------------------------------------------------------------------------------
 

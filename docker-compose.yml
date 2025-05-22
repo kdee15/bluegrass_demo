@@ -2,12 +2,12 @@ version: "3"
 
 services:
   db:
-    image: mysql:8.0
+    image: mysql:5.7
     volumes:
       - db_data:/var/lib/mysql
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: somewordpress
+      MYSQL_ROOT_PASSWORD: wordpress
       MYSQL_DATABASE: wordpress
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: wordpress
@@ -22,15 +22,21 @@ services:
       - "8000:80"
     restart: always
     volumes:
-      - wordpress_data:/var/www/html
-      - ./wp-content/themes/rbfresh:/var/www/html/wp-content/themes/rbfresh
+      - ./wp-content:/var/www/html/wp-content
     environment:
-      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_DB_NAME: wordpress
     networks:
       - wpsite
+    command: >
+      bash -c "curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar &&
+      chmod +x wp-cli.phar &&
+      mv wp-cli.phar /usr/local/bin/wp &&
+      apt-get update &&
+      apt-get install -y default-mysql-client &&
+      docker-entrypoint.sh apache2-foreground"
 
   phpmyadmin:
     depends_on:
@@ -46,11 +52,13 @@ services:
 
   # Node.js container for SASS compilation (optional)
   node:
-    image: node:18
+    image: node:latest
     volumes:
       - ./wp-content/themes/rbfresh:/app
     working_dir: /app
-    command: /bin/sh -c "npm install && npm run sass"
+    command: >
+      bash -c "npm install &&
+      npm run watch"
     networks:
       - wpsite
 

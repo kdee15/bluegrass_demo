@@ -22,19 +22,13 @@ $carousel_query = new WP_Query($args);
                 <?php while ($carousel_query->have_posts()) : $carousel_query->the_post(); ?> 
                     <div class="swiper-slide">
                         <div class="hero-banner__content">
-                            <h2 class="hero-banner__title"><?php the_title(); ?></h2>
-                            <div class="hero-banner__text">
+                            <h1 class="hero-banner__title fntH1"><?php the_title(); ?></h1>
+                            <div class="hero-banner__text fnt20">
                                 <?php the_content(); ?>
                             </div>
-                            <?php 
-                            $cta_label = get_field('cta_label');
-                            $cta_link = get_field('cta_link');
-                            ?>
-                            <?php if ($cta_label && $cta_link) : ?>
-                                <a href="<?php echo esc_url($cta_link); ?>" class="hero-banner__cta">
-                                    <?php echo esc_html($cta_label); ?>
-                                </a>
-                            <?php endif; ?>
+                            <a class="btn btn--red fnt20" href="<?php the_field('cta_url') ?>">
+                                <?php the_field('cta_label') ?>    
+                            </a>
                         </div>
                         <?php if (has_post_thumbnail()) : ?>
                             <div class="hero-banner__image">
