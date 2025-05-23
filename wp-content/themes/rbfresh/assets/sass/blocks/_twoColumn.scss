@@ -80,15 +80,18 @@
   }
 
   & + .block-spacer {
-    background-color: #fafafa;
-    .spacer__left {
-      polygon {
-        fill: #fafafa;
-      }
-    }
+    transform: rotate(180deg);
+    background-color: white;
     .spacer__right {
+      z-index: 1;
       polygon {
         fill: #f4f4f4;
+      }
+    }
+    .spacer__left {
+      z-index: 2;
+      polygon {
+        fill: #fafafa;
       }
     }
   }

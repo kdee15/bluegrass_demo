@@ -69,6 +69,10 @@ add_action('wp_enqueue_scripts', 'rbfresh_scripts');
  */
 require get_template_directory() . '/inc/dynamic-css.php';
 
+/**
+ * Include ACF fields
+ */
+require get_template_directory() . '/inc/acf-fields.php';
 
 // A.2 CUSTOM CONTENT TYPES +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -168,6 +172,47 @@ function two_column() {
   }
   
   add_action( 'init', 'two_column' );
+  
+// A.2.2. End -----------------------------------------------------------------------------------------------------
+
+// A.2.2. THREE CARD GRID -----------------------------------------------------------------------------------------
+
+function three_column() {
+    $labels = array(
+        'name'               => _x('Three Column', 'post type general name'),
+        'singular_name'      => _x('Three Column', 'post type singular name'),
+        'add_new'           => _x('Add New', 'Three Column'),
+        'add_new_item'      => __('Add New Three Column'),
+        'edit_item'         => __('Edit Three Column'),
+        'new_item'          => __('New Three Column'),
+        'all_items'         => __('All Three Column'),
+        'view_item'         => __('View Three Column'),
+        'parent_item_colon' => '',
+        'menu_name'         => 'Three Column'
+    );
+
+    $args = array(
+        'labels'              => $labels,
+        'description'         => 'Three Column Layout',
+        'public'              => true,
+        'menu_position'       => 6,
+        'supports'            => array('title', 'editor', 'thumbnail', 'custom-fields'),
+        'has_archive'         => true,
+        'show_in_rest'        => true,
+        'show_in_admin_bar'   => true,
+        'show_in_menu'        => true,
+        'menu_icon'           => 'dashicons-grid-view',
+        'capability_type'     => 'post',
+        'hierarchical'        => false,
+        'publicly_queryable'  => true,
+        'query_var'           => true,
+        'rewrite'            => array('slug' => 'three-column'),
+    );
+
+    register_post_type('three_column', $args);
+}
+
+add_action('init', 'three_column');
   
 // A.2.2. End -----------------------------------------------------------------------------------------------------
 

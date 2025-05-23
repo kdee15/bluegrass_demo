@@ -1,0 +1,187 @@
+// BLOCK [ THREE COLUMN ] ################################################################################################
+// A. GLOBAL STYLES ---------------------------------------
+
+// A.0. IMPORTS -------------------------------------------
+
+@use "../abstracts" as var;
+
+// A.0. IMPORTS END ---------------------------------------
+
+.three-column {
+  // A.1. GRID STYLE --------------------------------------
+  padding: 80px 0;
+  background-color: #fff;
+
+  .container {
+    max-width: 1180px;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    // color: var.$text-gray;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  &__intro {
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 60px;
+    // color: var.$text-gray;
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+  }
+
+  &__grid {
+    margin-bottom: 60px;
+  }
+
+  &__item {
+    position: relative;
+    height: 100%;
+    .three-column__skew {
+      position: relative;
+      padding: 30px;
+      border-radius: 8px;
+      height: 100%;
+      z-index: 1;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 10px;
+        right: 10px;
+        background-color: var.$theme-red;
+        border-radius: 8px;
+        transition: 0.3s;
+        z-index: -5;
+        transform: skewY(3deg);
+      }
+      &:after {
+        content: "";
+        transform: skewY(-3deg);
+        background-color: white;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -3;
+        border-radius: 8px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+    }
+    &:hover {
+      transition: 0.3s;
+      .three-column__skew {
+        .three-column__image {
+          transform: scale(1.1);
+          transition: 0.3s;
+        }
+        &:before {
+          transform: skewY(0);
+          transition: 0.3s;
+        }
+        &:after {
+          transform: skewY(0);
+          transition: 0.3s;
+        }
+      }
+    }
+  }
+
+  &__wrapper {
+    z-index: 10;
+  }
+
+  &__image {
+    margin-bottom: 24px;
+    border-radius: 4px;
+    overflow: hidden;
+    max-width: 100px;
+    margin: 0 auto;
+    transition: 0.3s;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    text-align: center;
+  }
+
+  &__item-title {
+    margin-bottom: 16px;
+  }
+
+  &__text {
+    // color: var.$text-gray;
+    margin-bottom: 24px;
+  }
+
+  & {
+    position: relative;
+    padding-bottom: 135px;
+    margin-bottom: -45px;
+  }
+
+  // A.1. END ---------------------------------------------
+
+  // B. MEDIA QUERIES -------------------------------------
+
+  // B.1. GRACEFUL DEGRADATION -------------
+
+  @include var.respond-below(sm) {
+    padding: 40px 0;
+
+    &__header {
+      margin-bottom: 30px;
+    }
+
+    &__intro {
+      margin-bottom: 40px;
+
+      p {
+        font-size: 16px;
+      }
+    }
+
+    &__item {
+      margin-bottom: 30px;
+    }
+  }
+
+  // B.1. END ------------------------------
+
+  // B.2. PROGRESSIVE ENHANCEMENT ----------
+
+  @include var.respond-above(sm) {
+  }
+
+  @include var.respond-above(md) {
+  }
+
+  @include var.respond-above(lg) {
+  }
+
+  // B.2. END ------------------------------
+  // B. END -----------------------------------------------
+}
+
+// END OF FILE ########################################################################################################
