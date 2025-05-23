@@ -47,15 +47,7 @@ $carousel_query = new WP_Query($args);
                         <svg class="hero-banner__svg--skew svg__desk" width="1059" height="682" viewBox="0 0 1059 682" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                             <path opacity="0.2" d="M1059 0L0 682V0H634.779H1059Z" fill="#221F20" fill-opacity="0.3"/>
                         </svg>
-                        <svg class="hero-banner__svg--one" width="720" height="90" viewBox="0 0 720 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7.77526e-06 0.000307085L1.56433e-05 90.0003L720 45.0002L7.77526e-06 0.000307085Z" fill="#31343D"/>
-                        </svg>
-                        <svg class="hero-banner__svg--two" width="720" height="90" viewBox="0 0 720 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1.17093e-05 45.0003L720 90.0002L720 0.000244141L1.17093e-05 45.0003Z" fill="#221F20" fill-opacity="0.3"/>
-                        </svg>
-                        <svg class="hero-banner__svg--three" width="1440" height="45" viewBox="0 0 1440 45" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                            <path d="M1.94846e-05 45.0004L1440 45.0002L720 0.000307085L1.94846e-05 45.0004Z" fill="white"/>
-                        </svg>
+            
                     </div>
                 <?php endwhile; ?>
             </div>
@@ -64,9 +56,21 @@ $carousel_query = new WP_Query($args);
             <div class="hero-banner__nav hero-banner__nav--prev swiper-button-prev"></div>
             <!-- Add Pagination -->
             <div class="hero-banner__pagination swiper-pagination"></div>
+            <div class="hero-banner__bottom">
+            <svg class="hero-banner__svg--one" width="720" height="90" viewBox="0 0 720 90" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <path d="M7.77526e-06 0.000307085L1.56433e-05 90.0003L720 45.0002L7.77526e-06 0.000307085Z" fill="#31343D"/>
+            </svg>
+            <svg class="hero-banner__svg--two" width="720" height="90" viewBox="0 0 720 90" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <path d="M1.17093e-05 45.0003L720 90.0002L720 0.000244141L1.17093e-05 45.0003Z" fill="#221F20" fill-opacity="0.3"/>
+            </svg>
+            <svg class="hero-banner__svg--three" width="1440" height="45" viewBox="0 0 1440 45" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <path d="M1.94846e-05 45.0004L1440 45.0002L720 0.000307085L1.94846e-05 45.0004Z" fill="white"/>
+            </svg>
+    </div>
         </div>
     <?php endif; ?>
     <?php wp_reset_postdata(); ?>
+
 </div>
 
 <script>

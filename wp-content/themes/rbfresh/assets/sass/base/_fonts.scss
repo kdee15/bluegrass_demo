@@ -10,6 +10,7 @@ h1,
 h1 *,
 .fntH1,
 .fntH1 * {
+  font-family: typo.$font;
   @include typo.scaledFont(40, 40, 65, 125%, 125%, 125%, 125%);
 }
 

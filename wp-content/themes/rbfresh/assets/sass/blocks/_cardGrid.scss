@@ -18,8 +18,8 @@
   .card-grid {
     &__title {
       margin: 48px auto 40px;
-      text-align: center;
       max-width: 780px;
+      font-weight: 700;
     }
   }
 
@@ -46,6 +46,9 @@
       text-align: center;
       transition: 0.6s;
     }
+    &__text {
+      line-height: 100%;
+    }
     &:hover {
       .blur-overlay {
         transition: 0.6s;
@@ -62,7 +65,7 @@
       .grid-card__content {
         position: relative;
         text-align: left;
-        padding: 40px;
+        padding: 32px 40px;
       }
       .grid-card__title {
         font-weight: 600;
@@ -131,7 +134,7 @@
 
   // B.1. GRACEFUL DEGRADATION -------------
 
-  @include var.respond-below(sm) {
+  @include var.respond-below(md) {
     .card-grid {
       &__wrapper {
         padding-left: 28px;
@@ -154,6 +157,11 @@
   // B.2. PROGRESSIVE ENHANCEMENT ----------
 
   @include var.respond-above(sm) {
+    .grid-card {
+      &__text {
+        line-height: 150%;
+      }
+    }
   }
 
   @include var.respond-above(md) {

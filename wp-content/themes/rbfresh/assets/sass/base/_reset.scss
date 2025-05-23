@@ -1,4 +1,5 @@
 @use "../abstracts/variables" as vars;
+@use "../abstracts/typography" as typo;
 
 // Box sizing
 *,
@@ -29,7 +30,7 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: vars.$line-height-base;
-  font-family: vars.$font-family-base;
+  font-family: typo.$font;
   color: vars.$color-text;
   background-color: vars.$color-background;
 }

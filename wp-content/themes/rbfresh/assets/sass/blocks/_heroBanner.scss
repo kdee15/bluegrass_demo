@@ -33,7 +33,8 @@
     width: 100%;
     height: 100%;
     z-index: 1;
-    min-height: 550px;
+    min-height: 65vh;
+    margin-bottom: -2em;
   }
 
   &__img {
@@ -48,7 +49,7 @@
     position: relative;
     z-index: 3;
     color: #fff;
-    padding: 70px 24px 0;
+    padding: 70px 24px 24px;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -98,7 +99,7 @@
         &--left {
           top: 0;
           &.svg__mobile {
-            top: 0;
+            top: -1px;
             left: 0;
             height: 10%;
           }
@@ -118,30 +119,57 @@
             display: none;
           }
         }
+        &--side {
+          left: 0;
+          top: 0;
+          max-width: 680px;
+        }
+      }
+    }
+  }
+  &__bottom {
+    position: absolute;
+    bottom: -1px;
+    width: 100%;
+    height: 40px;
+    .hero-banner {
+      &__svg {
+        position: absolute;
         &--one {
           bottom: 0;
           z-index: 2;
           left: 0;
           width: 50%;
-          height: auto;
+          height: 100%;
         }
         &--two {
           bottom: 0;
           z-index: 2;
           right: 0;
           width: 50%;
-          height: auto;
+          height: 100%;
         }
         &--three {
           bottom: 0;
           z-index: 2;
           left: 0;
-          height: auto;
+          height: 50%;
+          width: 100%;
         }
-        &--side {
-          left: 0;
-          top: 0;
-          max-width: 680px;
+      }
+    }
+  }
+}
+
+.hero-banner__pagination {
+  .swiper-pagination {
+    .swiper-pagination-clickable {
+      .swiper-pagination-bullets {
+        .swiper-pagination-horizontal {
+          bottom: -5px !important;
+          .swiper-pagination-bullet {
+            bottom: -5px;
+          }
         }
       }
     }
@@ -163,6 +191,9 @@
       &:hover {
         background-image: url("../images/elements/swiper--left-active.svg");
       }
+      &:after {
+        display: none;
+      }
     }
   }
   &.hero-banner__nav--next {
@@ -172,7 +203,16 @@
       &:hover {
         background-image: url("../images/elements/swiper--right-active.svg");
       }
+      &:after {
+        display: none;
+      }
     }
+  }
+}
+
+.swiper-pagination-bullet {
+  &.swiper-pagination-bullet-active {
+    background-color: #221f20;
   }
 }
 
@@ -183,12 +223,31 @@
 // B.1. GRACEFUL DEGRADATION ---------------
 
 // 767 DN
+@include abstracts.respond-below(md) {
+  .hero-banner {
+    &__image {
+      img {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}
+
 @include abstracts.respond-below(sm) {
 }
 
 // B.1. END --------------------------------
 
 // B.2. PROGRESSIVE ENHANCEMENT ------------
+
+@include abstracts.respond-above(xs) {
+  .hero-banner {
+    &__image {
+      min-height: 75vh;
+    }
+  }
+}
 
 @include abstracts.respond-above(sm) {
   .hero-banner {
@@ -198,19 +257,27 @@
           &--left {
             top: 0;
             &.svg__mobile {
-              height: 20%;
+              height: 8%;
+              top: -2px;
             }
           }
         }
       }
+    }
+    &__image {
+      min-height: 100vh;
+    }
+    &__bottom {
+      height: 70px;
     }
   }
 }
 
 @include abstracts.respond-above(md) {
   .hero-banner {
-    height: 80vh;
-    min-height: 500px;
+    .swiper-slide {
+      min-height: 80vh;
+    }
     &__image {
       position: absolute;
       top: 0;
@@ -218,6 +285,7 @@
       width: 100%;
       height: 100%;
       z-index: 1;
+      min-height: 80vh;
     }
 
     &__img {
@@ -228,9 +296,9 @@
 
     &__content {
       position: relative;
-      height: 100%;
+      height: 80vh;
       width: 100%;
-      max-width: 550px;
+      max-width: 43%;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -246,6 +314,11 @@
 
     &__title {
       margin-bottom: 32px;
+      font-weight: 700;
+    }
+
+    &__text {
+      font-weight: 500;
     }
 
     svg {
@@ -280,17 +353,34 @@
         }
       }
     }
+
     .hero-banner {
       &__image {
         width: 60%;
       }
+    }
+
+    &__bottom {
+      height: 70px;
     }
   }
 }
 
 @include abstracts.respond-above(lg) {
   .hero-banner {
-    max-height: 680px;
+    &__content {
+      max-width: 525px;
+    }
+    &__bottom {
+      height: 90px;
+    }
+  }
+}
+@include abstracts.respond-above(xl) {
+  .hero-banner {
+    &__content {
+      max-width: 575px;
+    }
   }
 }
 
