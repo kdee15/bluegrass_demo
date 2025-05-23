@@ -6,18 +6,23 @@ document.addEventListener("DOMContentLoaded", function () {
   // Get all cards
   const cards = gsap.utils.toArray(".col-12.col-md-6.col-lg-4");
 
-  // Animate each card independently
-  cards.forEach((card, index) => {
-    gsap.from(card, {
-      y: 50,
-      opacity: 0,
-      duration: 0.8,
-      scrollTrigger: {
-        trigger: card,
-        start: "top 80%",
-        toggleActions: "play none none reverse", // Only play once when entering, reverse when leaving
-        once: false, // Allow the animation to repeat
-      },
-    });
+  // Create a timeline for staggered animation
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".card-grid__wrapper",
+      start: "top 80%",
+      end: "top 20%", // End point for the scrub
+      scrub: 1, // Smooth scrubbing with 1 second of lag
+      toggleActions: "play none none reverse",
+    },
+  });
+
+  // Add staggered animation
+  tl.from(cards, {
+    y: 50,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.2, // 0.2 seconds between each card
+    ease: "power2.out",
   });
 });
