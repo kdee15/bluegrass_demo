@@ -23,6 +23,7 @@
 
   &__title {
     margin-bottom: 16px;
+    font-weight: 700;
   }
 
   &__subtitle {
@@ -45,7 +46,7 @@
   }
 
   &__grid {
-    margin-bottom: 80px;
+    margin-bottom: 20px;
   }
 
   &__column {
@@ -178,8 +179,19 @@
 
   // B.1. GRACEFUL DEGRADATION -------------
 
+  @include var.respond-below(md) {
+    .row {
+      padding-left: 28px;
+      padding-right: 28px;
+    }
+  }
+
   @include var.respond-below(sm) {
-    padding: 40px 0;
+    padding: 40px 0 90px;
+    .row {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
 
     &__header {
       margin-bottom: 30px;

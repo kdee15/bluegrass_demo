@@ -16,7 +16,7 @@
                     <div class="col-12 offset-lg-1 col-lg-5 two-column__body">
                         <div class="two-column__content">
                             <h2 class="two-column__title fntH2">
-                                <span class="two-column__title--first"><?php the_title(); ?></span>
+                                <?php get_template_part('assets/html/elements/svg--learn'); ?>
                                 <span class="two-column__title--second"><?php the_field('sub_text'); ?></span>
                             </h2>
                             <div class="two-column__copy">
