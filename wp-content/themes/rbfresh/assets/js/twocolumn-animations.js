@@ -3,19 +3,36 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   gsap.registerPlugin(ScrollTrigger);
 
-  // Parallax effect for images
-  gsap.utils.toArray(".two-column__figure").forEach((figure) => {
-    gsap.to(figure, {
-      yPercent: 30,
-      ease: "none",
-      scrollTrigger: {
-        trigger: figure,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true,
-      },
-    });
+  // Set initial state
+  gsap.set(".two-column__skew--desk", {
+    "--skew-before": "0deg",
+    "--skew-after": "0deg",
   });
+
+  // Create a timeline for the entire block
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".two-column",
+      start: "top 80%",
+      end: "top 20%",
+      scrub: 1,
+      toggleActions: "play none none reverse",
+    },
+  });
+
+  // Animate skew transforms
+  tl.fromTo(
+    ".two-column__skew--desk",
+    {
+      "--skew-before": "0deg",
+      "--skew-after": "0deg",
+    },
+    {
+      "--skew-before": "3deg",
+      "--skew-after": "-3deg",
+      duration: 0.8,
+    }
+  );
 
   // Subtle fade and slide for titles
   gsap.utils.toArray(".two-column__title").forEach((title) => {

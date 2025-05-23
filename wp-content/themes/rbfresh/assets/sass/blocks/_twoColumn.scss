@@ -1,4 +1,4 @@
-// BLOCK [ CARD GRID ] ################################################################################################
+// BLOCK [ TWO COLUMN ] ################################################################################################
 // A. GLOBAL STYLES ---------------------------------------
 
 // A.0. IMPORTS -------------------------------------------
@@ -9,7 +9,6 @@
 
 .two-column {
   // A.1. GRID STYLE --------------------------------------
-
   background-color: #fafafa;
   padding-bottom: 135px;
 
@@ -17,7 +16,12 @@
     max-width: 1180px;
   }
 
+  &__wrapper {
+    position: relative;
+  }
+
   &__image {
+    position: relative;
     img {
       max-width: 100%;
       height: auto;
@@ -31,25 +35,12 @@
   &__figure {
     position: relative;
     background-image: none;
-    &:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: var.$theme-red;
-      transform: rotate(-4deg);
-      border-radius: 15px;
-      z-index: 0;
-    }
   }
 
   &__title {
     font-weight: 700;
     margin-bottom: 24px;
     &--first {
-      // font-family: var.$kids;
       display: block;
     }
     &--second {
@@ -108,6 +99,12 @@
       padding-right: 28px;
     }
 
+    &__figure {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+    }
+
     &__image {
       margin-top: 60px;
     }
@@ -133,9 +130,16 @@
   }
 
   @include var.respond-above(md) {
+    padding-top: 70px;
+    &__wrapper {
+      display: flex;
+      justify-content: end;
+    }
     &__image {
       order: 1;
+      .two-column__skew--desk,
       .two-column__figure {
+        width: 100%;
         aspect-ratio: 1/1;
         position: relative;
         overflow: hidden;
@@ -148,6 +152,11 @@
           display: none;
         }
       }
+      .two-column__skew--desk {
+        position: absolute;
+        background-color: var.$theme-red;
+        transform: rotate(-5deg);
+      }
     }
     &__body {
       order: 2;
@@ -155,6 +164,7 @@
   }
 
   @include var.respond-above(lg) {
+    padding-top: 90px;
   }
 
   // B.2. END ------------------------------

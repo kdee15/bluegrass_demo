@@ -29,9 +29,13 @@
                         </div>
                     </div>
                     <div class="col-12 col-lg-6 two-column__image">
-                        <figure class="two-column__figure" style="background-image: url(<?php echo esc_url(get_the_post_thumbnail_url()); ?>);">
-                            <?php the_post_thumbnail(); ?>
-                        </figure>
+                        <div class="two-column__wrapper">
+                            <div class="two-column__skew--desk"></div>
+                            <figure class="two-column__figure" style="background-image: url(<?php echo esc_url(get_the_post_thumbnail_url()); ?>);">
+                                <?php the_post_thumbnail(); ?>
+                                <div class="two-column__skew--mobi"></div>
+                            </figure>
+                        </div>
                     </div>
                 <?php endwhile;
             endif;

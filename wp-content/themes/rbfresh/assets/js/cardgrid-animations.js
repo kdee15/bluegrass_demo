@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Add staggered animation
   tl.from(cards, {
-    y: 50,
-    opacity: 0,
+    y: 15,
+    opacity: 0.4,
     duration: 0.8,
     stagger: 0.2, // 0.2 seconds between each card
     ease: "power2.out",
