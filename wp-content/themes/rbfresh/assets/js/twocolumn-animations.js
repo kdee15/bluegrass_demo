@@ -5,8 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Set initial state
   gsap.set(".two-column__skew--desk", {
-    "--skew-before": "0deg",
-    "--skew-after": "0deg",
+    transform: "rotate(0deg)",
   });
 
   // Create a timeline for the entire block
@@ -20,19 +19,18 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
-  // Animate skew transforms
-  tl.fromTo(
-    ".two-column__skew--desk",
-    {
-      "--skew-before": "0deg",
-      "--skew-after": "0deg",
-    },
-    {
-      "--skew-before": "3deg",
-      "--skew-after": "-3deg",
-      duration: 0.8,
-    }
-  );
+  // Animate skew transform
+  tl.to(".two-column__skew--desk", {
+    transform: "rotate(-5deg)",
+    duration: 0.8,
+  });
+
+  // Animate skew transform
+  tl.from(".two-column__figure", {
+    transform: "scale(1.01)",
+    opacity: 0.8,
+    duration: 0.8,
+  });
 
   // Subtle fade and slide for titles
   gsap.utils.toArray(".two-column__title").forEach((title) => {

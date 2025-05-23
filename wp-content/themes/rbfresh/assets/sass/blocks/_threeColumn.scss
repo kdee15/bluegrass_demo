@@ -150,6 +150,28 @@
     margin-bottom: -45px;
   }
 
+  & {
+    position: relative;
+    padding-bottom: 135px;
+    margin-bottom: -45px;
+  }
+
+  & + .block-spacer {
+    background-color: white;
+    .spacer__right {
+      z-index: 1;
+      polygon {
+        fill: #31343d;
+      }
+    }
+    .spacer__left {
+      z-index: 2;
+      polygon {
+        fill: #221f20;
+      }
+    }
+  }
+
   // A.1. END ---------------------------------------------
 
   // B. MEDIA QUERIES -------------------------------------
