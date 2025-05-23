@@ -1,0 +1,183 @@
+// COMPONENT [ FOOTER ] ################################################################################################
+// A. GLOBAL STYLES ---------------------------------------
+
+// A.0. IMPORTS -------------------------------------------
+
+@use "../abstracts" as var;
+
+// A.0. IMPORTS END ---------------------------------------
+
+.footer {
+  background-color: var.$theme-dark;
+  color: white;
+  padding: 80px 0 0;
+
+  &__main {
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  &__logo {
+    margin-bottom: 30px;
+    img {
+      max-width: 180px;
+      height: auto;
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: white;
+  }
+
+  &__links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 12px;
+
+      a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+
+  &__contact {
+    margin-bottom: 24px;
+
+    p {
+      margin-bottom: 8px;
+
+      a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 16px;
+
+    a {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 20px;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  &__copy {
+    padding: 40px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    &-left,
+    &-right {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+  }
+
+  &__bottom {
+    padding: 24px 0;
+  }
+
+  &__copyright {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+  }
+
+  &__legal {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 24px;
+
+    a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  // A.1. END ---------------------------------------------
+
+  // B. MEDIA QUERIES -------------------------------------
+
+  // B.1. GRACEFUL DEGRADATION -------------
+
+  @include var.respond-below(md) {
+    padding: 60px 0 0;
+
+    &__main {
+      padding-bottom: 40px;
+    }
+
+    &__logo {
+      margin-bottom: 24px;
+    }
+
+    &__title {
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+
+    &__copy {
+      padding: 30px 0;
+
+      &-left,
+      &-right {
+        margin-bottom: 20px;
+      }
+    }
+
+    &__legal {
+      justify-content: flex-start;
+      margin-top: 16px;
+    }
+  }
+
+  // B.1. END ------------------------------
+
+  // B.2. PROGRESSIVE ENHANCEMENT ----------
+
+  @include var.respond-above(sm) {
+  }
+
+  @include var.respond-above(md) {
+  }
+
+  @include var.respond-above(lg) {
+  }
+
+  // B.2. END ------------------------------
+  // B. END -----------------------------------------------
+}
+
+// END OF FILE ########################################################################################################

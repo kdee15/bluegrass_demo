@@ -25,3 +25,12 @@ function rbfresh_output_css_variables() {
     echo '<style id="rbfresh-css-variables">' . rbfresh_generate_css_variables() . '</style>';
 }
 add_action('wp_head', 'rbfresh_output_css_variables', 5); // Priority 5 ensures it loads before main.css
+
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+function rbfresh_dynamic_css() {
+    // Add any dynamic CSS here
+    return '';
+}

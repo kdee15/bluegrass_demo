@@ -1,6 +1,11 @@
-document.addEventListener("DOMContentLoaded", function () {
-  if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined")
+// Wait for both DOM and GSAP to be ready
+function initCardGridAnimations() {
+  if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
+    console.warn("GSAP or ScrollTrigger not loaded yet, retrying in 100ms...");
+    setTimeout(initCardGridAnimations, 100);
     return;
+  }
+
   gsap.registerPlugin(ScrollTrigger);
 
   // Get all cards
@@ -11,8 +16,8 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollTrigger: {
       trigger: ".card-grid__wrapper",
       start: "top 80%",
-      end: "top 20%", // End point for the scrub
-      scrub: 1, // Smooth scrubbing with 1 second of lag
+      end: "top 20%",
+      scrub: 1,
       toggleActions: "play none none reverse",
     },
   });
@@ -22,7 +27,10 @@ document.addEventListener("DOMContentLoaded", function () {
     y: 15,
     opacity: 0.4,
     duration: 0.8,
-    stagger: 0.2, // 0.2 seconds between each card
+    stagger: 0.2,
     ease: "power2.out",
   });
-});
+}
+
+// Start the initialization process when DOM is ready
+document.addEventListener("DOMContentLoaded", initCardGridAnimations);

@@ -74,6 +74,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroPath = document.querySelector('.hero-banner__path');
     let isAnimating = false;
 
+    // Wait for Swiper to be available
+    if (typeof Swiper === 'undefined') {
+        console.error('Swiper library not loaded');
+        return;
+    }
+
     const swiper = new Swiper('.hero-banner__swiper', {
         loop: true,
         parallax: true,
