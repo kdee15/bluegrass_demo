@@ -9,7 +9,6 @@
 
 .card-grid {
   // A.1. GRID STYLE --------------------------------------
-
   background-color: #fff;
 
   .container {
@@ -90,14 +89,39 @@
     transition: 0.6s;
     background-color: rgba(black, 0.3);
     transform: rotate(-6deg) skewX(-6deg) translateY(25px);
+
     @supports (backdrop-filter: blur(1px)) and
       (not (-webkit-backdrop-filter: blur(1px))) {
-      backdrop-filter: blur(3px);
+      & {
+        backdrop-filter: blur(3px);
+      }
     }
 
     @supports (-webkit-backdrop-filter: blur(1px)) {
-      -webkit-backdrop-filter: blur(8px);
-      background: rgba(255, 255, 255, 0.1);
+      & {
+        -webkit-backdrop-filter: blur(8px);
+        background: rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+
+  & {
+    position: relative;
+    padding-bottom: 135px;
+    margin-bottom: -45px;
+  }
+
+  & + .block-spacer {
+    background-color: white;
+    .spacer__left {
+      polygon {
+        fill: #fafafa;
+      }
+    }
+    .spacer__right {
+      polygon {
+        fill: #f4f4f4;
+      }
     }
   }
 

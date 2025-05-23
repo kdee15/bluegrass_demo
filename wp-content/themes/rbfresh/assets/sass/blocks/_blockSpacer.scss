@@ -1,0 +1,68 @@
+// BLOCK [ SPACER ] ###################################################################################################
+// A. GLOBAL STYLES ---------------------------------------
+
+// A.0. IMPORTS -------------------------------------------
+
+@use "../abstracts" as var;
+
+// A.0. IMPORTS END ---------------------------------------
+
+// A.1. SPACER STYLE --------------------------------------
+
+.block-spacer {
+  position: relative;
+  width: 100%;
+  height: 45px;
+}
+
+.spacer__left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.spacer__right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+// A.1. END -----------------------------------------------
+
+// B. MEDIA QUERIES ---------------------------------------
+
+// B.1. GRACEFUL DEGRADATION ---------------
+
+// 767 DN
+@include var.respond-below(sm) {
+}
+
+// B.1. END --------------------------------
+
+// B.2. PROGRESSIVE ENHANCEMENT ------------
+
+@include var.respond-above(sm) {
+}
+
+@include var.respond-above(md) {
+  .block-spacer {
+    height: 70px;
+  }
+}
+
+@include var.respond-above(lg) {
+  .block-spacer {
+    height: 90px;
+  }
+}
+
+// B.2. END --------------------------------
+// B. END -------------------------------------------------
+
+// END OF FILE ########################################################################################################

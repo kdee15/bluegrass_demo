@@ -10,7 +10,8 @@
 .two-column {
   // A.1. GRID STYLE --------------------------------------
 
-  background-color: #fff;
+  background-color: #fafafa;
+  padding-bottom: 135px;
 
   .container {
     max-width: 1180px;
@@ -69,6 +70,26 @@
     .btn {
       display: block;
       margin-top: 40px;
+    }
+  }
+
+  & {
+    position: relative;
+    padding-bottom: 135px;
+    margin-bottom: -45px;
+  }
+
+  & + .block-spacer {
+    background-color: #fafafa;
+    .spacer__left {
+      polygon {
+        fill: #fafafa;
+      }
+    }
+    .spacer__right {
+      polygon {
+        fill: #f4f4f4;
+      }
     }
   }
 
