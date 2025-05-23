@@ -52,6 +52,20 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       "-=0.4"
     )
+    // Animate skew transforms
+    .fromTo(
+      ".three-column__skew",
+      {
+        "--skew-before": "0deg",
+        "--skew-after": "0deg",
+      },
+      {
+        "--skew-before": "3deg",
+        "--skew-after": "-3deg",
+        duration: 0.8,
+      },
+      "-=0.4"
+    )
     // Animate CTA
     .from(
       ".three-column .btn",
