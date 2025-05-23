@@ -20,14 +20,28 @@
     img {
       max-width: 100%;
       height: auto;
+      border-radius: 15px;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
     }
   }
 
   &__figure {
     position: relative;
     background-image: none;
-    border-radius: 15px;
-    overflow: hidden;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var.$theme-red;
+      transform: rotate(-4deg);
+      border-radius: 15px;
+      z-index: 0;
+    }
   }
 
   &__title {
