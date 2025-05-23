@@ -45,12 +45,18 @@
   }
 
   &__grid {
-    margin-bottom: 60px;
+    margin-bottom: 80px;
+  }
+
+  &__column {
+    margin-bottom: 50px;
   }
 
   &__item {
     position: relative;
     height: 100%;
+    max-width: 480px;
+    margin: 0 auto;
     .three-column__skew {
       position: relative;
       padding: 30px;

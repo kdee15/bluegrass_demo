@@ -59,7 +59,7 @@ $query = new WP_Query($args);
             <?php
             if ($query->have_posts()) :
                 while ($query->have_posts()) : $query->the_post(); ?>
-                    <div class="col-12 col-md-4">
+                    <div class="col-12 col-lg-4 three-column__column">
                         <div class="three-column__item">
                             <div class="three-column__skew">
                                 <div class="three-column__wrapper">
