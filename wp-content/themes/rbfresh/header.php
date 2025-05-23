@@ -9,6 +9,7 @@
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
     <link rel="icon" href="<?php echo get_site_icon_url(); ?>" type="image/png">
     <title><?php wp_title('|', true, 'right'); bloginfo('name'); ?></title>
+    <link href="https://db.onlinewebfonts.com/c/17539719b4e0eb2d54284f9ecce700e1?family=Amazing+Kids" rel="stylesheet">
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>

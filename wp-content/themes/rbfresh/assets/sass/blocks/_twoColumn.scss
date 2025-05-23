@@ -23,14 +23,38 @@
     }
   }
 
+  &__figure {
+    position: relative;
+    background-image: none;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
   &__title {
+    font-weight: 700;
+    margin-bottom: 24px;
     &--first {
       font-family: var.$kids;
       display: block;
     }
     &--second {
-      font-family: var.$kids;
+      font-family: var.$font;
       display: block;
+    }
+  }
+
+  &__copy {
+    p {
+      @include var.font(16, 150%);
+      font-weight: 500;
+      &:first-child {
+        @include var.font(20, 150%);
+        margin-bottom: 16px;
+      }
+    }
+    .btn {
+      display: block;
+      margin-top: 40px;
     }
   }
 
@@ -40,8 +64,22 @@
 
   // B.1. GRACEFUL DEGRADATION -------------
 
-  // 767 DN
+  @include var.respond-below(md) {
+    .row {
+      padding-left: 28px;
+      padding-right: 28px;
+    }
+
+    &__image {
+      margin-top: 60px;
+    }
+  }
+
   @include var.respond-below(sm) {
+    .row {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
   }
 
   // B.1. END ------------------------------
@@ -49,11 +87,29 @@
   // B.2. PROGRESSIVE ENHANCEMENT ----------
 
   @include var.respond-above(sm) {
+    &__copy {
+      .btn {
+        display: inline-block;
+      }
+    }
   }
 
   @include var.respond-above(md) {
     &__image {
       order: 1;
+      .two-column__figure {
+        aspect-ratio: 1/1;
+        position: relative;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center center;
+        max-width: 500px;
+        margin: 0 0 0 auto;
+        border-radius: 15px;
+        * {
+          display: none;
+        }
+      }
     }
     &__body {
       order: 2;

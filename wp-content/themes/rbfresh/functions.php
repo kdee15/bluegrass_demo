@@ -159,7 +159,7 @@ function two_column() {
       'description'   => 'Two Column Layout',
       'public'        => true,
       'menu_position' => 5,
-      'supports'      => array( 'title', 'editor', 'thumbnail', 'taxonomies', 'categories', 'media', 'content' ),
+      'supports'      => array( 'title', 'editor', 'thumbnail', 'taxonomies', 'categories', 'excerpt', 'content' ),
       'has_archive'   => true,
   
     );

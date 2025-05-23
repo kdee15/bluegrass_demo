@@ -13,20 +13,25 @@
             
             if ($two_column->have_posts()) :
                 while ($two_column->have_posts()) : $two_column->the_post(); ?>
-                    <div class="col-12 col-lg-6 two-column__body">
+                    <div class="col-12 offset-lg-1 col-lg-5 two-column__body">
                         <div class="two-column__content">
-                            <h2 class="two-column__title">
+                            <h2 class="two-column__title fntH2">
                                 <span class="two-column__title--first"><?php the_title(); ?></span>
                                 <span class="two-column__title--second"><?php the_field('sub_text'); ?></span>
                             </h2>
                             <div class="two-column__copy">
-                            <?php the_content(); ?>
-
+                                <?php the_excerpt(); ?>
+                                <?php the_content(); ?>
+                                <a class="btn btn--red-hollow" href="<?php the_field('cta_url'); ?>">
+                                <?php the_field('cta_label'); ?>
+                                </a>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-lg-6 two-column__image">
-                        <?php the_post_thumbnail(); ?>
+                        <figure class="two-column__figure" style="background-image: url(<?php echo esc_url(get_the_post_thumbnail_url()); ?>);">
+                            <?php the_post_thumbnail(); ?>
+                        </figure>
                     </div>
                 <?php endwhile;
             endif;

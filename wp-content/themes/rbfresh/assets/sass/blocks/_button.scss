@@ -28,6 +28,11 @@
     background-color: var.$theme-red;
     color: white;
   }
+  &--red-hollow {
+    background-color: transparent;
+    color: var.$theme-red;
+    border: 1px solid var.$theme-red;
+  }
   &--white-hollow {
     background-color: transparent;
     border: 1px solid white;
