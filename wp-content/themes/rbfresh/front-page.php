@@ -11,6 +11,7 @@ get_header(); ?>
 	<?php get_template_part( 'assets/html/blocks/blockHeroBanner' ); ?>
 	<?php get_template_part( 'assets/html/blocks/blockCardGrid' ); ?>
 	<?php get_template_part( 'assets/html/blocks/blockTwoColumn' ); ?>
+	<?php get_template_part( 'assets/html/blocks/blockTwoColumn' ); ?>
 </main>
 
 <?php

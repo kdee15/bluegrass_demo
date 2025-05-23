@@ -6,14 +6,14 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
-@font-face {
-  font-family: "AmazingKids";
-  src: url("../../fonts/amazing-kids.ttf") format("truetype");
-  font-display: swap;
-}
+// @font-face {
+//   font-family: "AmazingKids";
+//   src: url("../../fonts/amazing-kids.ttf") format("truetype");
+//   font-display: swap;
+// }
 
 $font: "Montserrat", sans-serif;
-$kids: "AmazingKids", sans-serif;
+// $kids: "AmazingKids", sans-serif;
 
 // A.2. RESPONSIVE FONT VARIABLES -------------------------
 // font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
