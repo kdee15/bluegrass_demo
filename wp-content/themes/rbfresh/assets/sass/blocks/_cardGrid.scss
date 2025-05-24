@@ -3,7 +3,7 @@
 
 // A.0. IMPORTS -------------------------------------------
 
-@use "../abstracts" as var;
+@use '../abstracts' as var;
 
 // A.0. IMPORTS END ---------------------------------------
 
@@ -62,10 +62,14 @@
     &--cta {
       position: relative;
       background-color: var.$theme-red;
+      transition: background-color 0.3s ease;
+      transform-style: preserve-3d;
+      perspective: 1000px;
       .grid-card__content {
         position: relative;
         text-align: left;
         padding: 32px 40px;
+        transform-style: preserve-3d;
       }
       .grid-card__title {
         font-weight: 600;
@@ -75,10 +79,16 @@
         margin-bottom: 24px;
       }
       &:hover {
+        background-color: rgba(var.$theme-red, 0.8);
         .grid-card__content {
           transform: none;
         }
       }
+      transition:
+        text-shadow 0.05s linear,
+        background-color 0.3s ease,
+        transform 0.05s linear;
+      will-change: text-shadow, background-color, transform;
     }
   }
 
@@ -93,8 +103,7 @@
     background-color: rgba(black, 0.3);
     transform: rotate(-6deg) skewX(-6deg) translateY(25px);
 
-    @supports (backdrop-filter: blur(1px)) and
-      (not (-webkit-backdrop-filter: blur(1px))) {
+    @supports (backdrop-filter: blur(1px)) and (not (-webkit-backdrop-filter: blur(1px))) {
       & {
         backdrop-filter: blur(3px);
       }
