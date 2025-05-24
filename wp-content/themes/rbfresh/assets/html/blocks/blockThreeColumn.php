@@ -6,12 +6,12 @@
  */
 
 // Get the first three_column post to access the block header and CTA
-$block_post = get_posts(array(
+$block_post = get_posts([
     'post_type' => 'three_column',
     'posts_per_page' => 1,
     'orderby' => 'date',
-    'order' => 'DESC'
-));
+    'order' => 'DESC',
+]);
 
 if ($block_post) {
     $header = get_field('three_column_header', $block_post[0]->ID);
@@ -20,13 +20,13 @@ if ($block_post) {
 }
 
 // Get all three column posts and sort by order
-$args = array(
+$args = [
     'post_type' => 'three_column',
     'posts_per_page' => -1,
     'meta_key' => 'three_column_order',
     'orderby' => 'meta_value_num',
-    'order' => 'ASC'
-);
+    'order' => 'ASC',
+];
 
 $query = new WP_Query($args);
 ?>

@@ -7,10 +7,10 @@
 
 // Query cards
 $args = [
-    'post_type'      => 'card_grid',
+    'post_type' => 'card_grid',
     'posts_per_page' => 6,
-    'orderby'        => 'menu_order',
-    'order'          => 'ASC',
+    'orderby' => 'menu_order',
+    'order' => 'ASC',
 ];
 
 $card_query = new WP_Query($args);

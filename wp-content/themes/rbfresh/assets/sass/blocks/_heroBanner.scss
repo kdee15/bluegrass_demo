@@ -2,7 +2,7 @@
 // A. GLOBAL STYLES ---------------------------------------
 // A.0. IMPORTS -------------------------------------------
 
-@use "../abstracts";
+@use '../abstracts';
 
 // A.0. IMPORTS END ---------------------------------------
 
@@ -52,7 +52,9 @@
     padding: 70px 24px 24px;
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease;
     z-index: 5;
 
     .swiper-slide-active & {
@@ -66,7 +68,9 @@
     font-weight: 800;
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s;
+    transition:
+      opacity 0.5s ease 0.2s,
+      transform 0.5s ease 0.2s;
 
     .swiper-slide-active & {
       opacity: 1;
@@ -77,7 +81,9 @@
   &__text {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.5s ease 0.4s, transform 0.5s ease 0.4s;
+    transition:
+      opacity 0.5s ease 0.4s,
+      transform 0.5s ease 0.4s;
 
     .swiper-slide-active & {
       opacity: 1;
@@ -87,6 +93,39 @@
 
   .btn {
     margin-top: 24px;
+  }
+
+  &__bottom {
+    position: absolute;
+    bottom: -1px;
+    width: 100%;
+    height: 40px;
+    .hero-banner {
+      &__svg {
+        position: absolute;
+        &--one {
+          bottom: 0;
+          z-index: 2;
+          left: 0;
+          width: 50%;
+          height: 100%;
+        }
+        &--two {
+          bottom: 0;
+          z-index: 2;
+          right: 0;
+          width: 50%;
+          height: 100%;
+        }
+        &--three {
+          bottom: 0;
+          z-index: 2;
+          left: 0;
+          height: 50%;
+          width: 100%;
+        }
+      }
+    }
   }
 
   svg {
@@ -127,37 +166,32 @@
       }
     }
   }
-  &__bottom {
+  &__tri-tr1 {
+    max-width: 80px;
+    aspect-ratio: 1/1;
     position: absolute;
-    bottom: -1px;
+    bottom: 2.8vh;
+    right: 22vw;
     width: 100%;
-    height: 40px;
-    .hero-banner {
-      &__svg {
-        position: absolute;
-        &--one {
-          bottom: 0;
-          z-index: 2;
-          left: 0;
-          width: 50%;
-          height: 100%;
-        }
-        &--two {
-          bottom: 0;
-          z-index: 2;
-          right: 0;
-          width: 50%;
-          height: 100%;
-        }
-        &--three {
-          bottom: 0;
-          z-index: 2;
-          left: 0;
-          height: 50%;
-          width: 100%;
-        }
-      }
-    }
+    z-index: 4;
+  }
+  &__tri-tr2 {
+    width: 100%;
+    max-width: 46px;
+    aspect-ratio: 1/1;
+    position: absolute;
+    bottom: 1.5vh;
+    right: 3vw;
+    z-index: 4;
+  }
+  &__tri-br {
+    width: 100%;
+    max-width: 70px;
+    aspect-ratio: 1/1;
+    position: absolute;
+    bottom: 50px;
+    right: 15px;
+    z-index: 4;
   }
 }
 
@@ -187,9 +221,9 @@
   &.hero-banner__nav--prev {
     &.swiper-button-prev {
       left: 40px;
-      background-image: url("../images/elements/swiper--left.svg");
+      background-image: url('../images/elements/swiper--left.svg');
       &:hover {
-        background-image: url("../images/elements/swiper--left-active.svg");
+        background-image: url('../images/elements/swiper--left-active.svg');
       }
       &:after {
         display: none;
@@ -199,9 +233,9 @@
   &.hero-banner__nav--next {
     &.swiper-button-next {
       right: 40px;
-      background-image: url("../images/elements/swiper--right.svg");
+      background-image: url('../images/elements/swiper--right.svg');
       &:hover {
-        background-image: url("../images/elements/swiper--right-active.svg");
+        background-image: url('../images/elements/swiper--right-active.svg');
       }
       &:after {
         display: none;
@@ -251,6 +285,12 @@
 
 @include abstracts.respond-above(sm) {
   .hero-banner {
+    &__image {
+      min-height: 85vh;
+    }
+    &__bottom {
+      height: 70px;
+    }
     svg {
       &.hero-banner {
         &__svg {
@@ -264,11 +304,18 @@
         }
       }
     }
-    &__image {
-      min-height: 100vh;
+    &__tri-tr1 {
+      bottom: 1.3vh;
+      right: 12vw;
     }
-    &__bottom {
-      height: 70px;
+    &__tri-tr2 {
+      bottom: 1.5vh;
+      right: 3vw;
+    }
+    &__tri-br {
+      max-width: 100px;
+      bottom: 20vh;
+      right: 2vw;
     }
   }
 }
@@ -354,6 +401,25 @@
       }
     }
 
+    &__tri-tr1 {
+      max-width: 100px;
+      bottom: auto;
+      right: auto;
+      top: 2vh;
+      left: 2vw;
+    }
+    &__tri-tr2 {
+      max-width: 75px;
+      bottom: auto;
+      right: auto;
+      top: 5vh;
+      left: 130px;
+    }
+    &__tri-br {
+      bottom: 10vh;
+      right: 5vw;
+    }
+
     .hero-banner {
       &__image {
         width: 60%;
@@ -374,12 +440,26 @@
     &__bottom {
       height: 90px;
     }
+    &__tri-tr1 {
+      left: 3vw;
+    }
+    &__tri-tr2 {
+      left: 150px;
+    }
   }
 }
 @include abstracts.respond-above(xl) {
   .hero-banner {
     &__content {
       max-width: 575px;
+    }
+    &__tri-tr1 {
+      top: 2vh;
+      left: 35px;
+    }
+    &__tri-tr2 {
+      top: 5vh;
+      left: 160px;
     }
   }
 }

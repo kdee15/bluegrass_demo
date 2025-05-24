@@ -4,70 +4,72 @@
  */
 
 // Prevent direct access
-if (!defined('ABSPATH')) {
+if (! defined('ABSPATH')) {
     exit;
 }
 
 // Theme setup
-function rbfresh_setup() {
+function rbfresh_setup()
+{
     // Add theme support
     add_theme_support('automatic-feed-links');
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
 
     // Register navigation menus
-    register_nav_menus(array(
+    register_nav_menus([
         'primary' => esc_html__('Primary Menu', 'rbfresh'),
         'footer' => esc_html__('Footer Menu', 'rbfresh'),
-    ));
+    ]);
 
     // Enable HTML5 markup for specific elements
-    add_theme_support('html5', array(
+    add_theme_support('html5', [
         'search-form',
         'comment-form',
         'comment-list',
         'gallery',
         'caption',
-    ));
+    ]);
 }
 add_action('after_setup_theme', 'rbfresh_setup');
 
 // Enqueue scripts and styles
-function rbfresh_scripts() {
+function rbfresh_scripts()
+{
     // Deregister default WordPress jQuery and enqueue a newer version
     wp_deregister_script('jquery');
-    wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.7.1.min.js', array(), '3.7.1', true);
+    wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.7.1.min.js', [], '3.7.1', true);
 
     // Enqueue Bootstrap CSS
-    wp_enqueue_style('bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css', array(), '5.3.3', 'all');
+    wp_enqueue_style('bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css', [], '5.3.3', 'all');
 
     // Enqueue Bootstrap JS
-    wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js', array('jquery'), '5.3.3', true);
+    wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js', ['jquery'], '5.3.3', true);
 
     // Enqueue Swiper CSS
-    wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), '11.0.0', 'all');
+    wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', [], '11.0.0', 'all');
 
     // Enqueue Swiper JS
-    wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '11.0.0', false);
+    wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', [], '11.0.0', false);
 
     // Enqueue GSAP and ScrollTrigger
-    wp_enqueue_script('gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js', array(), '3.12.5', false);
-    wp_enqueue_script('gsap-scrolltrigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js', array('gsap'), '3.12.5', false);
+    wp_enqueue_script('gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js', [], '3.12.5', false);
+    wp_enqueue_script('gsap-scrolltrigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js', ['gsap'], '3.12.5', false);
 
     // Enqueue animation files
     $cardgrid_js = get_template_directory() . '/assets/js/cardgrid-animations.js';
     if (file_exists($cardgrid_js)) {
-        wp_enqueue_script('cardgrid-animations', get_template_directory_uri() . '/assets/js/cardgrid-animations.js', array('gsap', 'gsap-scrolltrigger'), filemtime($cardgrid_js), false);
+        wp_enqueue_script('cardgrid-animations', get_template_directory_uri() . '/assets/js/cardgrid-animations.js', ['gsap', 'gsap-scrolltrigger'], filemtime($cardgrid_js), false);
     }
 
     $twocolumn_js = get_template_directory() . '/assets/js/twocolumn-animations.js';
     if (file_exists($twocolumn_js)) {
-        wp_enqueue_script('twocolumn-animations', get_template_directory_uri() . '/assets/js/twocolumn-animations.js', array('gsap', 'gsap-scrolltrigger'), filemtime($twocolumn_js), false);
+        wp_enqueue_script('twocolumn-animations', get_template_directory_uri() . '/assets/js/twocolumn-animations.js', ['gsap', 'gsap-scrolltrigger'], filemtime($twocolumn_js), false);
     }
 
     $threecolumn_js = get_template_directory() . '/assets/js/threecolumn-animations.js';
     if (file_exists($threecolumn_js)) {
-        wp_enqueue_script('threecolumn-animations', get_template_directory_uri() . '/assets/js/threecolumn-animations.js', array('gsap', 'gsap-scrolltrigger'), filemtime($threecolumn_js), false);
+        wp_enqueue_script('threecolumn-animations', get_template_directory_uri() . '/assets/js/threecolumn-animations.js', ['gsap', 'gsap-scrolltrigger'], filemtime($threecolumn_js), false);
     }
 
     // Enqueue main stylesheet (style.css in theme root)
@@ -77,11 +79,11 @@ function rbfresh_scripts() {
     $css_file = get_template_directory() . '/assets/css/main.css';
     // Only enqueue if the file exists
     if (file_exists($css_file)) {
-        wp_enqueue_style('rbfresh-main', get_template_directory_uri() . '/assets/css/main.css', array(), filemtime($css_file));
+        wp_enqueue_style('rbfresh-main', get_template_directory_uri() . '/assets/css/main.css', [], filemtime($css_file));
     }
     
     // Enqueue JavaScript
-    wp_enqueue_script('rbfresh-navigation', get_template_directory_uri() . '/assets/js/custom.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('rbfresh-navigation', get_template_directory_uri() . '/assets/js/custom.js', ['jquery'], '1.0.0', true);
     
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
@@ -90,11 +92,11 @@ function rbfresh_scripts() {
 add_action('wp_enqueue_scripts', 'rbfresh_scripts');
 
 // Include required files
-$required_files = array(
+$required_files = [
     '/inc/dynamic-css.php',
     '/inc/acf-fields.php',
-    '/inc/populate-footer.php'
-);
+    '/inc/populate-footer.php',
+];
 
 foreach ($required_files as $file) {
     $file_path = get_template_directory() . $file;
@@ -108,7 +110,8 @@ if (function_exists('acf_add_options_page')) {
     try {
         // Create a custom admin page for theme settings
         add_action('admin_menu', 'rbfresh_add_theme_settings_page');
-        function rbfresh_add_theme_settings_page() {
+        function rbfresh_add_theme_settings_page()
+        {
             add_menu_page(
                 'Theme Settings',
                 'Theme Settings',
@@ -121,16 +124,16 @@ if (function_exists('acf_add_options_page')) {
         }
 
         // Theme settings page content
-        function rbfresh_theme_settings_page() {
+        function rbfresh_theme_settings_page()
+        {
             ?>
             <div class="wrap">
                 <h1>Theme Settings</h1>
                 <form method="post" action="options.php">
                     <?php
                     settings_fields('theme_settings');
-                    do_settings_sections('theme_settings');
-                    submit_button();
-                    ?>
+            do_settings_sections('theme_settings');
+            submit_button(); ?>
                 </form>
             </div>
             <?php
@@ -138,7 +141,8 @@ if (function_exists('acf_add_options_page')) {
 
         // Register settings
         add_action('admin_init', 'rbfresh_register_theme_settings');
-        function rbfresh_register_theme_settings() {
+        function rbfresh_register_theme_settings()
+        {
             register_setting('theme_settings', 'footer_logo');
             register_setting('theme_settings', 'social_links');
             register_setting('theme_settings', 'contact_details');
@@ -152,24 +156,26 @@ if (function_exists('acf_add_options_page')) {
 }
 
 // Register widget area (sidebar)
-function rbfresh_widgets_init() {
-    register_sidebar(array(
-        'name'          => esc_html__('Sidebar', 'rbfresh'),
-        'id'            => 'sidebar-1',
-        'description'   => esc_html__('Add widgets here.', 'rbfresh'),
+function rbfresh_widgets_init()
+{
+    register_sidebar([
+        'name' => esc_html__('Sidebar', 'rbfresh'),
+        'id' => 'sidebar-1',
+        'description' => esc_html__('Add widgets here.', 'rbfresh'),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h2 class="widget-title">',
-        'after_title'   => '</h2>',
-    ));
+        'after_widget' => '</section>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ]);
 }
 add_action('widgets_init', 'rbfresh_widgets_init');
 
 // Register custom post types
-function register_custom_post_types() {
+function register_custom_post_types()
+{
     // Carousel
-    register_post_type('carousel', array(
-        'labels' => array(
+    register_post_type('carousel', [
+        'labels' => [
             'name' => _x('Carousel', 'post type general name'),
             'singular_name' => _x('Carousel Pic', 'post type singular name'),
             'add_new' => _x('Add New', 'Carousel Pic'),
@@ -178,18 +184,18 @@ function register_custom_post_types() {
             'new_item' => __('New Carousel Pic'),
             'all_items' => __('All Carousel Pics'),
             'view_item' => __('View Carousel'),
-            'menu_name' => 'Carousel'
-        ),
+            'menu_name' => 'Carousel',
+        ],
         'description' => 'A list of Carousel Pics',
         'public' => true,
         'menu_position' => 3,
-        'supports' => array('title', 'editor', 'thumbnail', 'taxonomies', 'categories', 'media', 'content'),
+        'supports' => ['title', 'editor', 'thumbnail', 'taxonomies', 'categories', 'media', 'content'],
         'has_archive' => true,
-    ));
+    ]);
 
     // Card Grid
-    register_post_type('card_grid', array(
-        'labels' => array(
+    register_post_type('card_grid', [
+        'labels' => [
             'name' => _x('Six Card Grid', 'post type general name'),
             'singular_name' => _x('Card', 'post type singular name'),
             'add_new' => _x('Add New', 'Card'),
@@ -198,18 +204,18 @@ function register_custom_post_types() {
             'new_item' => __('New Card'),
             'all_items' => __('All Cards'),
             'view_item' => __('View Card'),
-            'menu_name' => 'Six Card Grid'
-        ),
+            'menu_name' => 'Six Card Grid',
+        ],
         'description' => 'A list of Cards',
         'public' => true,
         'menu_position' => 4,
-        'supports' => array('title', 'editor', 'thumbnail', 'taxonomies', 'categories', 'media', 'content'),
+        'supports' => ['title', 'editor', 'thumbnail', 'taxonomies', 'categories', 'media', 'content'],
         'has_archive' => true,
-    ));
+    ]);
 
     // Two Column
-    register_post_type('two_column', array(
-        'labels' => array(
+    register_post_type('two_column', [
+        'labels' => [
             'name' => _x('Two Column', 'post type general name'),
             'singular_name' => _x('Two Column', 'post type singular name'),
             'add_new' => _x('Add New', 'Two Column'),
@@ -218,18 +224,18 @@ function register_custom_post_types() {
             'new_item' => __('New Two Column'),
             'all_items' => __('All Two Column'),
             'view_item' => __('View Two Column'),
-            'menu_name' => 'Two Column'
-        ),
+            'menu_name' => 'Two Column',
+        ],
         'description' => 'Two Column Layout',
         'public' => true,
         'menu_position' => 5,
-        'supports' => array('title', 'editor', 'thumbnail', 'taxonomies', 'categories', 'excerpt', 'content'),
+        'supports' => ['title', 'editor', 'thumbnail', 'taxonomies', 'categories', 'excerpt', 'content'],
         'has_archive' => true,
-    ));
+    ]);
 
     // Three Column
-    register_post_type('three_column', array(
-        'labels' => array(
+    register_post_type('three_column', [
+        'labels' => [
             'name' => _x('Three Column', 'post type general name'),
             'singular_name' => _x('Three Column', 'post type singular name'),
             'add_new' => _x('Add New', 'Three Column'),
@@ -238,12 +244,12 @@ function register_custom_post_types() {
             'new_item' => __('New Three Column'),
             'all_items' => __('All Three Column'),
             'view_item' => __('View Three Column'),
-            'menu_name' => 'Three Column'
-        ),
+            'menu_name' => 'Three Column',
+        ],
         'description' => 'Three Column Layout',
         'public' => true,
         'menu_position' => 6,
-        'supports' => array('title', 'editor', 'thumbnail', 'custom-fields'),
+        'supports' => ['title', 'editor', 'thumbnail', 'custom-fields'],
         'has_archive' => true,
         'show_in_rest' => true,
         'show_in_admin_bar' => true,
@@ -253,7 +259,7 @@ function register_custom_post_types() {
         'hierarchical' => false,
         'publicly_queryable' => true,
         'query_var' => true,
-        'rewrite' => array('slug' => 'three-column'),
-    ));
+        'rewrite' => ['slug' => 'three-column'],
+    ]);
 }
 add_action('init', 'register_custom_post_types');

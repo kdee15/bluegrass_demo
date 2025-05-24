@@ -3,10 +3,10 @@
         <div class="row">
             <?php
             $args = [
-                'post_type'      => 'two_column',
+                'post_type' => 'two_column',
                 'posts_per_page' => -1,
-                'orderby'        => 'menu_order',
-                'order'          => 'ASC',
+                'orderby' => 'menu_order',
+                'order' => 'ASC',
             ];
             
             $two_column = new WP_Query($args);
@@ -16,19 +16,21 @@
                     <div class="col-12 offset-lg-1 col-lg-5 two-column__body">
                         <div class="two-column__content">
                             <h2 class="two-column__title fntH2">
-                                <?php get_template_part('assets/html/elements/svg--learn'); ?>
+                                <span class="two-column__title--first">
+                                    <?php get_template_part('assets/html/elements/svg--learn'); ?>
+                                </span>
                                 <span class="two-column__title--second"><?php the_field('sub_text'); ?></span>
                             </h2>
                             <div class="two-column__copy">
                                 <?php the_excerpt(); ?>
                                 <?php the_content(); ?>
                                 <a class="btn btn--red-hollow" href="<?php the_field('cta_url'); ?>">
-                                <?php the_field('cta_label'); ?>
+                                    <?php the_field('cta_label'); ?>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-6 two-column__image">
+                    <div class="col-12 col-lg-6 two-column__image"> 
                         <div class="two-column__wrapper">
                             <div class="two-column__skew--desk"></div>
                             <figure class="two-column__figure" style="background-image: url(<?php echo esc_url(get_the_post_thumbnail_url()); ?>);">

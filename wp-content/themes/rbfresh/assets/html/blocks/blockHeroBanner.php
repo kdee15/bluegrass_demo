@@ -5,13 +5,13 @@
 
 // Query carousel slides
 $args = [
-    'post_type'      => 'carousel',
+    'post_type' => 'carousel',
     'posts_per_page' => -1,
-    'orderby'        => 'menu_order',
-    'order'          => 'ASC',
+    'orderby' => 'menu_order',
+    'order' => 'ASC',
 ];
 
-$carousel_query = new WP_Query($args);
+$carousel_query = new WP_Query($args); 
 ?>
 
 <div class="hero-banner">
@@ -29,6 +29,8 @@ $carousel_query = new WP_Query($args);
                             <a class="btn btn--red fnt16" href="<?php the_field('cta_url') ?>">
                                 <?php the_field('cta_label') ?>    
                             </a>
+                            <?php get_template_part('assets/html/elements/hero-banner__tri-tr1'); ?> 
+                            <?php get_template_part('assets/html/elements/hero-banner__tri-tr2'); ?>
                         </div>
                         <?php if (has_post_thumbnail()) : ?>
                             <div class="hero-banner__image">
@@ -36,6 +38,7 @@ $carousel_query = new WP_Query($args);
                                     <path d="M0 70.9999V0.98291H768L0 70.9999Z" fill="#221F20"/>
                                 </svg>
                                 <?php the_post_thumbnail('full', ['class' => 'hero-banner__img']); ?>
+                                <?php get_template_part('assets/html/elements/hero-banner__tri-br'); ?>
                             </div>
                         <?php endif; ?>
                         <svg class="hero-banner__svg--left svg__desk" width="100%" height="100%" viewBox="0 0 728 680" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
