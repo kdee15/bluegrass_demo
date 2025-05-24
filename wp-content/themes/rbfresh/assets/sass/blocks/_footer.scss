@@ -1,0 +1,109 @@
+// BLOCK [ FOOTER ] ################################################################################################
+// A. GLOBAL STYLES ---------------------------------------
+
+// A.0. IMPORTS -------------------------------------------
+
+@use '../abstracts' as var;
+
+// A.0. IMPORTS END ---------------------------------------
+
+.footer {
+  background-color: #221f20;
+  color: #fff;
+  padding: 60px 0 30px;
+
+  .container {
+    max-width: 1180px;
+  }
+
+  &__logo {
+    margin-bottom: 20px;
+    img {
+      max-width: 150px;
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  &__links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      margin-bottom: 10px;
+      a {
+        color: #fff;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &__social {
+    margin-top: 20px;
+    a {
+      color: #fff;
+      margin-right: 15px;
+      font-size: 20px;
+      &:hover {
+        color: var.$theme-red;
+      }
+    }
+  }
+
+  &__legal {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    li {
+      margin-left: 20px;
+      a {
+        color: #fff;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+// A.1. END -----------------------------------------------
+
+// B. MEDIA QUERIES ---------------------------------------
+
+// B.1. GRACEFUL DEGRADATION -------------
+
+@include var.respond-below(md) {
+  .footer {
+    padding: 40px 0 20px;
+    &__title {
+      margin-top: 30px;
+    }
+  }
+}
+
+// B.1. END --------------------------------
+
+// B.2. PROGRESSIVE ENHANCEMENT ------------
+
+@include var.respond-above(md) {
+  .footer {
+    &__legal {
+      justify-content: flex-end;
+    }
+  }
+}
+
+// B.2. END --------------------------------
+// B. END -------------------------------------------------
+
+// END OF FILE ########################################################################################################

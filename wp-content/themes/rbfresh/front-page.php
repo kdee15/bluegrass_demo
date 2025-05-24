@@ -15,6 +15,7 @@ get_header(); ?>
 	<?php get_template_part('assets/html/elements/blockSpacer'); ?>
 	<?php get_template_part('assets/html/blocks/blockThreeColumn'); ?>
 	<?php get_template_part('assets/html/elements/blockSpacer'); ?>
+	<?php get_template_part('assets/html/blocks/blockFooter'); ?>
 </main>
 
 <?php
