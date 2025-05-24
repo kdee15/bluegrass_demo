@@ -5,83 +5,87 @@
 ?>
 
 <footer class="footer">
-  <div class="container">
-    <!-- Row 1: 5 Columns -->
-    <div class="row">
-      <div class="col-md-2">
+  <div class="footer__container container">
+    <div class="footer__row--top row">
+      <div class="footer__col col-12 col-lg">
         <div class="footer__logo">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="Logo" />
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/images/elements/logo--rosebank.png" alt="Logo" />
         </div>
       </div>
-      <div class="col-md-2">
+      <div class="footer__col col-12 col-lg">
         <h3 class="footer__title">Find a Qualification</h3>
         <ul class="footer__links">
-          <li><a href="#">IIE Qualifications</a></li>
-          <li><a href="#">Commerce</a></li>
-          <li><a href="#">Finance & Accounting</a></li>
-          <li><a href="#">Education</a></li>
-          <li><a href="#">Humanities and Social Science</a></li>
-          <li><a href="#">Communications Technology</a></li>
+          <li class="footer__link-item"><a href="#">IIE Qualifications</a></li>
+          <li class="footer__link-item"><a href="#">Commerce</a></li>
+          <li class="footer__link-item"><a href="#">Finance & Accounting</a></li>
+          <li class="footer__link-item"><a href="#">Education</a></li>
+          <li class="footer__link-item"><a href="#">Humanities and Social Science</a></li>
+          <li class="footer__link-item"><a href="#">Communications Technology</a></li>
         </ul>
       </div>
-      <div class="col-md-2">
+      <div class="footer__col col-12 col-lg">
         <h3 class="footer__title">Admissions</h3>
         <ul class="footer__links">
-          <li><a href="#">Payment & Fees</a></li>
-          <li><a href="#">Application & Registration</a></li>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Information For Parents</a></li>
-          <li><a href="#">International Students</a></li>
+          <li class="footer__link-item"><a href="#">Payment & Fees</a></li>
+          <li class="footer__link-item"><a href="#">Application & Registration</a></li>
+          <li class="footer__link-item"><a href="#">FAQ</a></li>
+          <li class="footer__link-item"><a href="#">Information For Parents</a></li>
+          <li class="footer__link-item"><a href="#">International Students</a></li>
         </ul>
       </div>
-      <div class="col-md-2">
+      <div class="footer__col col-12 col-lg">
         <h3 class="footer__title">Quick Links</h3>
         <ul class="footer__links">
-          <li><a href="#">Study Online</a></li>
-          <li><a href="#">Why Choose Rosebank</a></li>
-          <li><a href="#">Meet The Faculty</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Life at Rosebank College</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Locations</a></li>
-          <li><a href="#">Accommodation</a></li>
+          <li class="footer__link-item"><a href="#">Study Online</a></li>
+          <li class="footer__link-item"><a href="#">Why Choose Rosebank</a></li>
+          <li class="footer__link-item"><a href="#">Meet The Faculty</a></li>
+          <li class="footer__link-item"><a href="#">Careers</a></li>
+          <li class="footer__link-item"><a href="#">Life at Rosebank College</a></li>
+          <li class="footer__link-item"><a href="#">Blog</a></li>
+          <li class="footer__link-item"><a href="#">Locations</a></li>
+          <li class="footer__link-item"><a href="#">Accommodation</a></li>
         </ul>
       </div>
-      <div class="col-md-4">
+      <div class="footer__col col-12 col-lg">
         <h3 class="footer__title">Talk to Us</h3>
-        <p>Base</p>
-        <p>Contact Us</p>
-        <p>Help Centre</p>
-        <p>Tel: 0861 253 276</p>
-        <p>Whatsapp: 087 240 6457</p>
-        <p>Email: info@rosebankcollege.co.za</p>
-        <div class="footer__social">
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-        </div>
+        <ul class="footer__links">
+          <li class="footer__link-item">Contact Us</li>
+          <li class="footer__link-item">Help Centre</li>
+          <li class="footer__link-item"><span class="theme-red">Tel: 0861 253 276</span></li>
+          <li class="footer__link-item"><span class="theme-red">Whatsapp: 087 240 6457</span></li>
+          <li class="footer__link-item"><span class="theme-red">info@rosebankcollege.co.za</span></li>
+          <li class="footer__link-item">
+            <div class="footer__social">
+              <a href="#" class="footer__social-link"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="footer__social-link"><i class="fab fa-youtube"></i></a>
+              <a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="footer__social-link"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="footer__social-link"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
-
-    <!-- Row 2: 2 Columns of Copy -->
-    <div class="row">
-      <div class="col-md-6">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <div class="footer__row--middle row">
+      <div class="footer__col col-12 col-lg-6">
+        <p class="footer__text fnt12">
+          Rosebank College is an educational brand of The Independent Institute of Education (Pty) Ltd which is registered with the Department of Higher Education and Training as a private higher education institution under the Higher Education Act, 1997 (reg. no. 2007/HE07/0022). Company registration number: 1987/004754/07.
+        </p>
       </div>
-      <div class="col-md-6">
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <div class="footer__col col-12 col-lg-6">
+        <p class="footer__text fnt12">
+          The Independent Institute of Education's official prospectus is available on www.iie.ac.za and on the library webpage. Information in this prospectus takes precedence over other programme and qualification information provided.
+        </p>
       </div>
     </div>
-
-    <!-- Row 3: Copyright and Legal -->
-    <div class="row">
-      <div class="col-md-6">
-        <p>&copy; 2023 Your Company. All rights reserved.</p>
-      </div>
-      <div class="col-md-6">
+    <div class="footer__row--bottom row">
+      <div class="footer__col col-12">
         <ul class="footer__legal">
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
+          <li class="footer__legal-item fnt12"><a href="#">© 2021 IIE Rosebank College.</a></li>
+          <li class="footer__legal-item fnt12"><a href="#">Privacy Policy</a></li>
+          <li class="footer__legal-item fnt12"><a href="#">Terms and Conditions</a></li>
+          <li class="footer__legal-item fnt12"><a href="#">PAIA</a></li>
         </ul>
       </div>
     </div>

@@ -270,9 +270,13 @@
 @include abstracts.respond-below(md) {
   .hero-banner {
     &__image {
+      overflow: hidden;
       img {
         left: 50%;
-        transform: translateX(-50%);
+        transform: translateX(-50%) scale(1.2);
+        .swiper-slide-active & {
+          transform: translateX(-50%) scale(1);
+        }
       }
     }
   }

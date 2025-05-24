@@ -46,6 +46,9 @@ function rbfresh_scripts()
     // Enqueue Bootstrap JS
     wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js', ['jquery'], '5.3.3', true);
 
+    // Enqueue Font Awesome
+    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css', array(), '5.15.4', 'all');
+
     // Enqueue Swiper CSS
     wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', [], '11.0.0', 'all');
 
@@ -84,6 +87,9 @@ function rbfresh_scripts()
     
     // Enqueue JavaScript
     wp_enqueue_script('rbfresh-navigation', get_template_directory_uri() . '/assets/js/custom.js', ['jquery'], '1.0.0', true);
+    
+    // Enqueue Footer JavaScript
+    wp_enqueue_script('rbfresh-footer', get_template_directory_uri() . '/assets/js/footer.js', [], '1.0.0', true);
     
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
