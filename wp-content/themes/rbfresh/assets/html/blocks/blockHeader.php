@@ -5,13 +5,13 @@
 ?>
 
 <header class="header">
-  <div class="header__container container">
+  <div class="header__container container-fluid">
     <div class="header__row row">
       <!-- Logo Column -->
       <div class="header__col col-12 col-lg-3">
         <div class="header__logo">
           <a href="<?php echo home_url(); ?>">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/elements/logo--rosebank.png" alt="Rosebank College Logo" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/elements/logo--rosebank--dark.png" alt="Rosebank College Logo" />
           </a>
         </div>
       </div>
@@ -88,7 +88,7 @@
                 </ul>
               </li>
               <li class="header__menu-item--cta">
-                <a href="#" class="btn">Apply Now</a>
+                <a href="#" class="btn--small btn--red">Apply Now</a>
             </ul>
           </nav>
         </div>

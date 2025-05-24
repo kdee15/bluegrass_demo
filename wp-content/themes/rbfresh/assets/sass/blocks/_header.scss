@@ -89,6 +89,7 @@
 
         a {
           color: #5f5e5e;
+          letter-spacing: 0.02em;
         }
 
         &:not(:last-child)::after {
@@ -110,16 +111,15 @@
           padding-right: 0;
         }
       }
-
-      .header__menu-item--sol {
-        color: var.$theme-red;
-      }
     }
 
     &--bottom {
-      justify-content: space-between;
+      justify-content: flex-end;
       font-size: 16px;
       font-weight: 500;
+      .header__menu-item {
+        margin-left: 24px;
+      }
     }
   }
 
@@ -136,6 +136,7 @@
       display: flex;
       align-items: center;
       transition: color 0.3s ease;
+      font-weight: 500;
 
       &:hover {
         color: var.$theme-red;
@@ -157,6 +158,10 @@
 
     &:hover > a::after {
       transform: rotate(180deg);
+    }
+
+    &--sol {
+      color: var.$theme-red;
     }
   }
 
