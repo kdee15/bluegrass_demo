@@ -59,7 +59,7 @@
 
     .swiper-slide-active & {
       opacity: 1;
-      transform: translateY(0);
+      transform: none;
     }
   }
 
@@ -247,6 +247,16 @@
 .swiper-pagination-bullet {
   &.swiper-pagination-bullet-active {
     background-color: #221f20;
+  }
+}
+
+.hero-banner__img {
+  transform: scale(1.2);
+  transition: 2s ease-in-out;
+  .swiper-slide-active & {
+    opacity: 1;
+    transform: scale(1);
+    transition: 2s ease-in-out;
   }
 }
 
