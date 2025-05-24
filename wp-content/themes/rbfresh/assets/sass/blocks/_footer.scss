@@ -185,29 +185,13 @@
 
 @include var.respond-above(md) {
   .footer {
-    &__row--top {
-      flex-wrap: nowrap !important;
-      .col-lg {
-        flex: 1 1 20%;
-      }
-    }
-    &__legal {
-      justify-content: flex-start;
-    }
-
-    &__links {
-      max-height: none;
-      opacity: 1;
-      visibility: visible;
-      overflow: visible;
-      display: block;
-    }
-  }
-}
-
-@include var.respond-above(lg) {
-  .footer {
     &__row {
+      &--top {
+        flex-wrap: nowrap !important;
+        .col-lg {
+          flex: 1 1 20%;
+        }
+      }
       &--middle {
         padding-bottom: 0;
         padding-top: 32px;
@@ -225,8 +209,27 @@
           }
         }
       }
+      &--bottom {
+        margin-bottom: 50px;
+        .footer__legal-item {
+          display: inline-block;
+        }
+      }
+    }
+    &__legal {
+      justify-content: flex-start;
+    }
+    &__links {
+      max-height: none;
+      opacity: 1;
+      visibility: visible;
+      overflow: visible;
+      display: block;
     }
   }
+}
+
+@include var.respond-above(lg) {
 }
 
 // B.2. END --------------------------------

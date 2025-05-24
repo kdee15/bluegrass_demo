@@ -13,4 +13,9 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<a class="skip-link screen-reader-text" href="#main">Skip to content</a> 
+<?php wp_body_open(); ?>
+
+<div id="page" class="site">
+    <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'rbfresh'); ?></a>
+
+    <?php get_template_part('assets/html/blocks/blockHeader'); ?> 
