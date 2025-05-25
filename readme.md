@@ -2,13 +2,13 @@
 
 ## This is a demo site for the Bluegrass assessment.
 
-Installation
+### Installation
 
 1. Run `npm install`
 2. Run `docker-compose up -d`
 3. restore the database from the backup folder
 
-URL
+#### URL
 
 http://localhost:8000
 
@@ -18,7 +18,7 @@ user: admin
 
 password: QphlE\*1KQjwWNyGfa1
 
-phpMyAdmin
+#### phpMyAdmin
 
 http://localhost:8080
 
