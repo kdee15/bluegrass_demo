@@ -10,7 +10,7 @@
 .three-column {
   // A.1. GRID STYLE --------------------------------------
   padding: 80px 0;
-  background-color: #fff;
+  background-color: abstracts.$color-white;
 
   .container {
     max-width: 1180px;
@@ -161,17 +161,17 @@
   }
 
   & + .block-spacer {
-    background-color: white;
+    background-color: abstracts.$color-white;
     .spacer__right {
       z-index: 1;
       polygon {
-        fill: #31343d;
+        fill: abstracts.$color-text;
       }
     }
     .spacer__left {
       z-index: 2;
       polygon {
-        fill: #221f20;
+        fill: abstracts.$color-black;
       }
     }
   }

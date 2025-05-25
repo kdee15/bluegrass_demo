@@ -9,7 +9,7 @@
 
 .two-column {
   // A.1. GRID STYLE --------------------------------------
-  background-color: #fafafa;
+  background-color: abstracts.$color-background-light;
   padding-top: 80px;
   padding-bottom: 135px;
 
@@ -93,17 +93,17 @@
 
   & + .block-spacer {
     transform: rotate(180deg);
-    background-color: white;
+    background-color: abstracts.$color-white;
     .spacer__right {
       z-index: 1;
       polygon {
-        fill: #f4f4f4;
+        fill: abstracts.$color-background-light;
       }
     }
     .spacer__left {
       z-index: 2;
       polygon {
-        fill: #fafafa;
+        fill: abstracts.$color-background-light;
       }
     }
   }

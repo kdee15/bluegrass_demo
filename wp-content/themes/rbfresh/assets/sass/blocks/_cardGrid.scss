@@ -3,13 +3,13 @@
 
 // A.0. IMPORTS -------------------------------------------
 
-@use '../abstracts' as var;
+@use '../abstracts' as abstracts;
 
 // A.0. IMPORTS END ---------------------------------------
 
 .card-grid {
   // A.1. GRID STYLE --------------------------------------
-  background-color: #fff;
+  background-color: abstracts.$color-white;
 
   .container {
     max-width: 1180px;
@@ -61,7 +61,7 @@
     }
     &--cta {
       position: relative;
-      background-color: var.$color-theme-red;
+      background-color: abstracts.$color-theme-red;
       transition: background-color 0.3s ease;
       transform-style: preserve-3d;
       perspective: 1000px;
@@ -79,7 +79,7 @@
         margin-bottom: 24px;
       }
       &:hover {
-        background-color: rgba(var.$color-theme-red, 0.8);
+        background-color: rgba(abstracts.$color-theme-red, 0.8);
         .grid-card__content {
           transform: none;
         }
@@ -124,15 +124,15 @@
   }
 
   & + .block-spacer {
-    background-color: white;
+    background-color: abstracts.$color-white;
     .spacer__left {
       polygon {
-        fill: #fafafa;
+        fill: abstracts.$color-background-light;
       }
     }
     .spacer__right {
       polygon {
-        fill: #f4f4f4;
+        fill: abstracts.$color-background-light;
       }
     }
   }
@@ -143,7 +143,7 @@
 
   // B.1. GRACEFUL DEGRADATION -------------
 
-  @include var.respond-below(md) {
+  @include abstracts.respond-below(md) {
     .card-grid {
       &__wrapper {
         padding-left: 28px;
@@ -152,7 +152,7 @@
     }
   }
 
-  @include var.respond-below(sm) {
+  @include abstracts.respond-below(sm) {
     .card-grid {
       &__wrapper {
         padding-left: 12px;
@@ -165,7 +165,7 @@
 
   // B.2. PROGRESSIVE ENHANCEMENT ----------
 
-  @include var.respond-above(sm) {
+  @include abstracts.respond-above(sm) {
     .grid-card {
       &__text {
         line-height: 150%;
@@ -173,10 +173,10 @@
     }
   }
 
-  @include var.respond-above(md) {
+  @include abstracts.respond-above(md) {
   }
 
-  @include var.respond-above(lg) {
+  @include abstracts.respond-above(lg) {
     padding-top: 80px;
 
     &__title {

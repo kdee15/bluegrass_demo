@@ -1,7 +1,8 @@
 // Import built-in modules
-@use "sass:color";
-@use "sass:math";
-@use "sass:meta";
+@use 'sass:color';
+@use 'sass:math';
+@use 'sass:meta';
+@use 'variables' as var;
 
 // Convert px to rem
 @function rem($pixels, $context: 16) {
@@ -15,7 +16,7 @@
 
 // Strip unit from number
 @function strip-unit($number) {
-  @if meta.type-of($number) == "number" and not math.is-unitless($number) {
+  @if meta.type-of($number) == 'number' and not math.is-unitless($number) {
     @return math.div($number, ($number * 0 + 1));
   }
   @return $number;
@@ -28,4 +29,12 @@
 
 @function shade($color, $percentage) {
   @return color.mix(#000, $color, $percentage);
+}
+
+@function lighten($color, $percentage) {
+  @return color.mix(var.$color-white, $color, $percentage);
+}
+
+@function darken($color, $percentage) {
+  @return color.mix(var.$color-black, $color, $percentage);
 }
