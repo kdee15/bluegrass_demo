@@ -28,7 +28,7 @@ password: wordpress
 
 ## feedback
 
-a. the assessment took about 24h
-b. for the header and footer, i chose to use static content, as the focus was the site components
-c. building up the carousel elements and getting it to be completely responsive was interesting with all the visual elements. i chose to build them up individually so as to make future animation easier. implemented some interactions on some elements to llustrate this capability.
-d. i highlighted the plugins i would install but did not actually install them.
+a. The assessment took about 24h
+b. For the header and footer, I chose to use static content, as the focus was the site components
+c. Building up the carousel elements and getting it to be completely responsive was interesting with all the visual elements. I chose to build them up individually so as to make future animation easier. Implemented some interactions on some elements to illustrate this capability.
+d. I highlighted the plugins I would install but did not actually install them.
