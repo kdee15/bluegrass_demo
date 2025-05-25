@@ -10,13 +10,16 @@
 // A.1. BUTTON STYLE --------------------------------------
 
 .btn {
+  position: relative;
   padding: 14px 24px;
   border-radius: 50px;
   font-weight: 700;
   text-decoration: none !important;
+  transition: transform 0.3s ease;
 }
 
 .btn--small {
+  position: relative;
   padding: 8px 12px;
   border-radius: 50px;
   @include var.font(12, 120%);
@@ -24,20 +27,84 @@
   font-weight: 700;
 }
 
-.btn {
+// Color modifiers that apply to both .btn and .btn--small
+.btn,
+.btn--small {
   &--red {
     background-color: var.$color-theme-red;
     color: white;
   }
+
   &--red-hollow {
     background-color: transparent;
     color: var.$color-theme-red;
     border: 1px solid var.$color-theme-red;
   }
+
   &--white-hollow {
     background-color: transparent;
     border: 1px solid white;
     color: white;
+  }
+
+  &:after {
+    opacity: 0;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    border-radius: 50px;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+  }
+
+  &:before {
+    opacity: 0;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    border-radius: 50px;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover {
+    text-shadow: none !important;
+    color: black !important;
+    background-color: white !important;
+    transform: translateY(-2px);
+
+    &:before {
+      opacity: 0.2;
+      animation: pulse 1.5s infinite;
+    }
+
+    &:after {
+      opacity: 0.1;
+      animation: pulse 1.5s infinite 0.5s;
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.2;
   }
 }
 
