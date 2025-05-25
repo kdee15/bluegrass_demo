@@ -273,7 +273,7 @@
       overflow: hidden;
       img {
         left: 50%;
-        transform: translateX(-50%) scale(1.2);
+        transform: translateX(-50%) scale(1.1);
         .swiper-slide-active & {
           transform: translateX(-50%) scale(1);
         }
