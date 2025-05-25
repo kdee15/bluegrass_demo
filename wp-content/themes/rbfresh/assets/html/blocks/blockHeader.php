@@ -7,28 +7,23 @@
 <header class="header">
   <div class="header__container container-fluid">
     <div class="header__row row">
-      <!-- Logo Column -->
-      <div class="header__col col-12 col-lg-3">
+      <div class="header__col col-4 col-lg-3">
         <div class="header__logo">
           <a href="<?php echo home_url(); ?>">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/elements/logo--rosebank--dark.png" alt="Rosebank College Logo" />
           </a>
         </div>
       </div>
-
-      <!-- Navigation Column -->
-      <div class="header__col col-12 col-lg-9">
-        <!-- Burger Menu Button -->
+      <div class="header__col col-8 col-lg-9">
+        <div class="header__col--cta d-lg-none">
+          <a href="#" class="btn--small btn--red">Apply Now</a>
+        </div>
         <button class="header__burger" aria-label="Toggle Menu">
           <span></span>
           <span></span>
           <span></span>
         </button>
-
-        <!-- Mobile Menu Overlay -->
         <div class="header__mobile-overlay"></div>
-
-        <!-- Navigation Wrapper -->
         <div class="header__nav-wrapper">
           <!-- Upper Menu -->
           <nav class="header__nav header__nav--top">
@@ -39,7 +34,7 @@
               <li class="header__menu-item"><a href="#" class="fnt12">Alumni</a></li>
               <li class="header__menu-item"><a href="#" class="fnt12">Enquire</a></li>
               <li class="header__menu-item">
-                <a href="#" class="header__menu-item--sol fnt12">Study Online <i class="fas fa-desktop"></i></a>
+                <a href="#" class="fnt12">Study Online <i class="fas fa-desktop"></i></a>
               </li>
             </ul>
           </nav>
@@ -87,8 +82,9 @@
                   <li><a href="#" class="fnt12">Contact Item 3</a></li>
                 </ul>
               </li>
-              <li class="header__menu-item--cta">
+              <li class="header__menu-item--cta d-none d-lg-block">
                 <a href="#" class="btn--small btn--red">Apply Now</a>
+              </li>
             </ul>
           </nav>
         </div>

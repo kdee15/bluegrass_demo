@@ -49,11 +49,18 @@
       <div class="footer__col col-12 col-lg">
         <h3 class="footer__title">Talk to Us</h3>
         <ul class="footer__links">
-          <li class="footer__link-item">Contact Us</li>
-          <li class="footer__link-item">Help Centre</li>
-          <li class="footer__link-item"><span class="theme-red">Tel: 0861 253 276</span></li>
-          <li class="footer__link-item"><span class="theme-red">Whatsapp: 087 240 6457</span></li>
-          <li class="footer__link-item"><span class="theme-red">info@rosebankcollege.co.za</span></li>
+          <li class="footer__link-item d-none d-lg-block">Contact Us</li>
+          <li class="footer__link-item d-none d-lg-block">Help Centre</li>
+          <li class="footer__link-item d-none d-lg-block"><span class="theme-red">Tel: 0861 253 276</span></li>
+          <li class="footer__link-item d-none d-lg-block"><span class="theme-red">Whatsapp: 087 240 6457</span></li>
+          <li class="footer__link-item d-none d-lg-block"><span class="theme-red">info@rosebankcollege.co.za</span></li>
+          <li class="footer__link-item d--lg-none"><span class="fnt12">Payment & Fees</span></li>
+          <li class="footer__link-item d-lg-none"><span class="fnt12">Student Portal</span></li>
+          <li class="footer__link-item d-lg-none"><span class="fnt12">Study Online <i class="fas fa-desktop"></i></span></li>
+          <li class="footer__link-item footer__link-item--cta d-flex d-md-block d-lg-none">
+            <a href="#" class="btn--small btn--white-hollow d-block d-md-inline-block">RC Assist</a>
+            <a href="#" class="btn--small btn--red d-block d-md-inline-block">Enquire</a>
+          </li>
           <li class="footer__link-item">
             <div class="footer__social">
               <a href="#" class="footer__social-link"><i class="fab fa-facebook-f"></i></a>

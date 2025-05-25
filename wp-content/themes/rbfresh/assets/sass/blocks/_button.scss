@@ -3,7 +3,7 @@
 
 // A.0. IMPORTS -------------------------------------------
 
-@use "../abstracts" as var;
+@use '../abstracts' as var;
 
 // A.0. IMPORTS END ---------------------------------------
 
@@ -13,13 +13,14 @@
   padding: 14px 24px;
   border-radius: 50px;
   font-weight: 700;
+  text-decoration: none !important;
 }
 
 .btn--small {
   padding: 8px 12px;
   border-radius: 50px;
   @include var.font(12, 120%);
-  text-decoration: none;
+  text-decoration: none !important;
   font-weight: 700;
 }
 

@@ -3,7 +3,7 @@
 
 // A.0. IMPORTS -------------------------------------------
 
-@use '../abstracts' as var;
+@use '../abstracts' as abstracts;
 
 // A.0. IMPORTS END ---------------------------------------
 
@@ -12,6 +12,14 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: relative;
+
+  &__col {
+    &:last-child {
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 56px;
+    }
+  }
 
   &__container {
     max-width: 1180px;
@@ -89,7 +97,7 @@
 
         a {
           color: #5f5e5e;
-          letter-spacing: 0.02em;
+          letter-spacing: 0.125em;
         }
 
         &:not(:last-child)::after {
@@ -117,9 +125,6 @@
       justify-content: flex-end;
       font-size: 16px;
       font-weight: 500;
-      .header__menu-item {
-        margin-left: 24px;
-      }
     }
   }
 
@@ -139,7 +144,7 @@
       font-weight: 500;
 
       &:hover {
-        color: var.$theme-red;
+        color: abstracts.$theme-red;
       }
 
       i {
@@ -147,7 +152,6 @@
       }
     }
 
-    // Add caret for items with submenu
     &:has(.header__submenu) > a::after {
       content: '\f107';
       font-family: 'Font Awesome 5 Free';
@@ -160,8 +164,14 @@
       transform: rotate(180deg);
     }
 
-    &--sol {
-      color: var.$theme-red;
+    .header__menu-item--sol {
+      color: abstracts.$theme-red !important;
+    }
+
+    &--cta {
+      .btn--small {
+        font-family: abstracts.$font;
+      }
     }
   }
 
@@ -274,7 +284,6 @@
           padding: 0;
           margin: 10px 0;
           width: 100%;
-
           &::after {
             display: none;
           }
@@ -324,8 +333,24 @@
 
 // B.2. PROGRESSIVE ENHANCEMENT ------------
 
-@media (min-width: 992px) {
+// @media (min-width: 992px) {
+@include abstracts.respond-above(md) {
   .header {
+    &__menu-item {
+      &--cta {
+        margin-left: 24px;
+      }
+    }
+    &__menu {
+      &--bottom {
+        justify-content: flex-end;
+        font-size: 16px;
+        font-weight: 500;
+        .header__menu-item {
+          margin-left: 24px;
+        }
+      }
+    }
     &__logo {
       img {
         max-width: 180px;

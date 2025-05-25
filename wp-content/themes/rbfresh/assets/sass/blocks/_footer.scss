@@ -80,6 +80,17 @@
     .theme-red {
       color: var.$theme-red;
     }
+    &--cta {
+      display: flex;
+      gap: 24px;
+      margin-top: 48px;
+      margin-bottom: 32px;
+      a {
+        font-family: var.$font;
+        flex: 1 1 50%;
+        text-align: center;
+      }
+    }
   }
 
   &__social {
@@ -185,6 +196,13 @@
 
 @include var.respond-above(md) {
   .footer {
+    &__link-item {
+      &--cta {
+        a {
+          margin-right: 24px;
+        }
+      }
+    }
     &__row {
       &--top {
         flex-wrap: nowrap !important;
