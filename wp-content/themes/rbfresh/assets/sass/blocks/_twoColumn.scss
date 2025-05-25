@@ -3,7 +3,7 @@
 
 // A.0. IMPORTS -------------------------------------------
 
-@use "../abstracts" as var;
+@use '../abstracts' as var;
 
 // A.0. IMPORTS END ---------------------------------------
 
@@ -164,7 +164,7 @@
       }
       .two-column__skew--desk {
         position: absolute;
-        background-color: var.$theme-red;
+        background-color: var.$color-theme-red;
         transform: rotate(-5deg);
       }
     }

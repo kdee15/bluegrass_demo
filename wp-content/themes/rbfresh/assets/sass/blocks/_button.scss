@@ -26,13 +26,13 @@
 
 .btn {
   &--red {
-    background-color: var.$theme-red;
+    background-color: var.$color-theme-red;
     color: white;
   }
   &--red-hollow {
     background-color: transparent;
-    color: var.$theme-red;
-    border: 1px solid var.$theme-red;
+    color: var.$color-theme-red;
+    border: 1px solid var.$color-theme-red;
   }
   &--white-hollow {
     background-color: transparent;

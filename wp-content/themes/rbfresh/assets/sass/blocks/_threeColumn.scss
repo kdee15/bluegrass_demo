@@ -3,7 +3,7 @@
 
 // A.0. IMPORTS -------------------------------------------
 
-@use "../abstracts" as var;
+@use '../abstracts' as abstracts;
 
 // A.0. IMPORTS END ---------------------------------------
 
@@ -28,7 +28,6 @@
 
   &__subtitle {
     font-size: 18px;
-    // color: var.$text-gray;
     max-width: 780px;
     margin: 0 auto;
   }
@@ -37,7 +36,6 @@
     text-align: center;
     max-width: 780px;
     margin: 0 auto 60px;
-    // color: var.$text-gray;
 
     p {
       font-size: 18px;
@@ -68,21 +66,21 @@
       --skew-after: 0deg;
 
       &:before {
-        content: "";
+        content: '';
         position: absolute;
         top: 0;
         bottom: 0;
         left: 10px;
         right: 10px;
-        background-color: var.$theme-red;
+        background-color: abstracts.$color-theme-red;
         border-radius: 8px;
         transition: 0.3s;
         z-index: -5;
-        transform: skewY(var(--skew-before));
+        transform: skewY(abstracts(--skew-before));
       }
       &:after {
-        content: "";
-        transform: skewY(var(--skew-after));
+        content: '';
+        transform: skewY(abstracts(--skew-after));
         background-color: white;
         position: absolute;
         top: 0;
@@ -179,14 +177,14 @@
 
   // B.1. GRACEFUL DEGRADATION -------------
 
-  @include var.respond-below(md) {
+  @include abstracts.respond-below(md) {
     .row {
       padding-left: 28px;
       padding-right: 28px;
     }
   }
 
-  @include var.respond-below(sm) {
+  @include abstracts.respond-below(sm) {
     padding: 40px 0 90px;
     .row {
       padding-left: 12px;
@@ -214,13 +212,13 @@
 
   // B.2. PROGRESSIVE ENHANCEMENT ----------
 
-  @include var.respond-above(sm) {
+  @include abstracts.respond-above(sm) {
   }
 
-  @include var.respond-above(md) {
+  @include abstracts.respond-above(md) {
   }
 
-  @include var.respond-above(lg) {
+  @include abstracts.respond-above(lg) {
   }
 
   // B.2. END ------------------------------

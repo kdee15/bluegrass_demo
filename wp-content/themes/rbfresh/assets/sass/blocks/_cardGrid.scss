@@ -61,7 +61,7 @@
     }
     &--cta {
       position: relative;
-      background-color: var.$theme-red;
+      background-color: var.$color-theme-red;
       transition: background-color 0.3s ease;
       transform-style: preserve-3d;
       perspective: 1000px;
@@ -79,7 +79,7 @@
         margin-bottom: 24px;
       }
       &:hover {
-        background-color: rgba(var.$theme-red, 0.8);
+        background-color: rgba(var.$color-theme-red, 0.8);
         .grid-card__content {
           transform: none;
         }
