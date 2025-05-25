@@ -206,6 +206,9 @@
     &__row {
       &--top {
         flex-wrap: nowrap !important;
+        .footer__title {
+          margin-top: 0;
+        }
         .col-lg {
           flex: 1 1 20%;
         }

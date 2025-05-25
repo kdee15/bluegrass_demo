@@ -62,8 +62,6 @@
       border-radius: 8px;
       height: 100%;
       z-index: 1;
-      --skew-before: 0deg;
-      --skew-after: 0deg;
 
       &:before {
         content: '';
@@ -76,11 +74,11 @@
         border-radius: 8px;
         transition: 0.3s;
         z-index: -5;
-        transform: skewY(abstracts(--skew-before));
+        transform: skewY(5deg);
       }
       &:after {
         content: '';
-        transform: skewY(abstracts(--skew-after));
+        transform: skewY(-5deg);
         background-color: white;
         position: absolute;
         top: 0;
@@ -139,7 +137,6 @@
   }
 
   &__text {
-    // color: var.$text-gray;
     margin-bottom: 24px;
   }
 
