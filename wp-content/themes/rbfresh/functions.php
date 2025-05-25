@@ -101,6 +101,7 @@ $required_files = [
     '/inc/dynamic-css.php',
     '/inc/acf-fields.php',
     '/inc/populate-footer.php',
+    '/inc/plugin-config.php',
 ];
 
 foreach ($required_files as $file) {

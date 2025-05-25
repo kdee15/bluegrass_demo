@@ -12,6 +12,12 @@ URL
 
 http://localhost:8000
 
+http://localhost:8000/wp-admin
+
+user: admin
+
+password: QphlE\*1KQjwWNyGfa1
+
 phpMyAdmin
 
 http://localhost:8080
