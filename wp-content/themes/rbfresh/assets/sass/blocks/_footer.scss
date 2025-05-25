@@ -33,11 +33,11 @@
       .footer__col {
         &:first-child {
           padding-top: 32px;
-          border-top: 1px solid rgba(white, 0.5);
+          border-top: 1px solid $color-white-50;
         }
       }
       p {
-        color: rgba(white, 0.9);
+        color: $color-white-90;
         &:first-child {
           margin-bottom: 24px;
         }
@@ -142,10 +142,10 @@
     &__row--top {
       .footer__col {
         &:not(:first-child) {
-          border-top: 1px solid rgba(white, 0.5);
+          border-top: 1px solid $color-white-50;
         }
         &:last-child {
-          border-bottom: 1px solid rgba(white, 0.5);
+          border-bottom: 1px solid $color-white-50;
         }
       }
     }
@@ -214,7 +214,7 @@
         padding-bottom: 0;
         padding-top: 32px;
         margin-top: 32px;
-        border-top: 1px solid rgba(white, 0.5);
+        border-top: 1px solid $color-white-50;
         .footer__col {
           &:first-child {
             padding-top: 0;

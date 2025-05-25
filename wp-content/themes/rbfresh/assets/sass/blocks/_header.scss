@@ -10,7 +10,7 @@
 .header {
   padding: 20px 0;
   background-color: $color-white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px $color-shadow;
   position: relative;
 
   &__col {
@@ -62,7 +62,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: $color-overlay;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
@@ -182,7 +182,7 @@
     background: $color-white;
     min-width: 200px;
     padding: 10px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px $color-shadow;
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
