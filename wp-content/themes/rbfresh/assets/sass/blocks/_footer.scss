@@ -8,8 +8,8 @@
 // A.0. IMPORTS END ---------------------------------------
 
 .footer {
-  background-color: #221f20;
-  color: #fff;
+  background-color: $color-black;
+  color: $color-white;
   padding: 60px 0 30px;
 
   .container {
@@ -66,7 +66,7 @@
     li {
       margin-bottom: 10px;
       a {
-        color: #fff;
+        color: $color-white;
         text-decoration: none;
         &:hover {
           text-decoration: underline;
@@ -99,7 +99,7 @@
     justify-content: space-between;
     max-width: 300px;
     a {
-      color: #fff;
+      color: $color-white;
       font-size: 20px;
       &:hover {
         color: var.$theme-red;
@@ -115,7 +115,7 @@
       margin-right: 20px;
       margin-top: 24px;
       a {
-        color: #fff;
+        color: $color-white;
         text-decoration: none;
         &:hover {
           text-decoration: underline;
