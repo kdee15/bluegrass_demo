@@ -1,11 +1,6 @@
 jQuery(document).ready(function ($) {
   const heroBanner = $('.hero-banner');
-  if (!heroBanner.length) {
-    console.log('Hero banner not found');
-    return;
-  }
-
-  console.log('Hero banner script loaded');
+  if (!heroBanner.length) return;
 
   heroBanner.on('mousemove', function (e) {
     const rect = this.getBoundingClientRect();
@@ -25,8 +20,6 @@ jQuery(document).ready(function ($) {
       '--mouse-x': moveX,
       '--mouse-y': moveY,
     });
-
-    console.log('Mouse move:', { moveX, moveY });
   });
 
   // Reset position when mouse leaves
@@ -35,6 +28,5 @@ jQuery(document).ready(function ($) {
       '--mouse-x': 0,
       '--mouse-y': 0,
     });
-    console.log('Mouse leave - reset position');
   });
 });
