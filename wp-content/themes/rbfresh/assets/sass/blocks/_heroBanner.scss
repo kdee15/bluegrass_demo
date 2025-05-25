@@ -175,7 +175,11 @@
     right: 22vw;
     width: 100%;
     z-index: 4;
+    transition: transform 0.3s ease-out;
+    will-change: transform;
+    transform: translate(0, 0);
   }
+
   &__tri-tr2 {
     width: 100%;
     max-width: 46px;
@@ -184,7 +188,11 @@
     bottom: 1.5vh;
     right: 3vw;
     z-index: 4;
+    transition: transform 0.3s ease-out;
+    will-change: transform;
+    transform: translate(0, 0);
   }
+
   &__tri-br {
     width: 100%;
     max-width: 70px;
@@ -193,6 +201,23 @@
     bottom: 50px;
     right: 15px;
     z-index: 4;
+    transition: transform 0.3s ease-out;
+    will-change: transform;
+    transform: translate(0, 0);
+  }
+
+  &:hover {
+    .hero-banner__tri-tr1 {
+      transform: translate(calc(var(--mouse-x) * 0.05px), calc(var(--mouse-y) * 0.05px));
+    }
+
+    .hero-banner__tri-tr2 {
+      transform: translate(calc(var(--mouse-x) * 0.03px), calc(var(--mouse-y) * 0.03px));
+    }
+
+    .hero-banner__tri-br {
+      transform: translate(calc(var(--mouse-x) * 0.04px), calc(var(--mouse-y) * 0.04px));
+    }
   }
 }
 

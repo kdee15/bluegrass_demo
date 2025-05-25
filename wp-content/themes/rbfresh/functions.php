@@ -75,6 +75,12 @@ function rbfresh_scripts()
         wp_enqueue_script('threecolumn-animations', get_template_directory_uri() . '/assets/js/threecolumn-animations.js', ['gsap', 'gsap-scrolltrigger'], filemtime($threecolumn_js), false);
     }
 
+    // Enqueue hero banner animations
+    $hero_banner_js = get_template_directory() . '/assets/js/hero-banner.js';
+    if (file_exists($hero_banner_js)) {
+        wp_enqueue_script('rbfresh-hero-banner', get_template_directory_uri() . '/assets/js/hero-banner.js', ['jquery'], filemtime($hero_banner_js), true);
+    }
+
     // Enqueue main stylesheet (style.css in theme root)
     wp_enqueue_style('rbfresh-style', get_stylesheet_uri());
     
