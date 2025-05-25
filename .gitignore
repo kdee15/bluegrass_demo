@@ -1,12 +1,8 @@
 # WordPress core files
 wp-admin/
 wp-includes/
-
-# wp-content ignores
-# wp-content/uploads/
 wp-content/upgrade/
 wp-content/cache/
-wp-content/backups/
 
 # Ignore all themes except the current one
 wp-content/themes/*
@@ -17,7 +13,6 @@ wp-content/themes/*
 # wp-content/mu-plugins/
 
 # WordPress configuration
-wp-config.php
 wp-config-sample.php
 .htaccess
 
@@ -61,7 +56,6 @@ Thumbs.db
 .cache/
 
 # Database files
-*.sql
 *.sqlite
 *.sqlite3
 
