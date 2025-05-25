@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Animate skew transforms if they exist
   const skews = document.querySelectorAll('.three-column__skew');
   if (skews.length > 0) {
-    skews.forEach((skew, index) => {
+    skews.forEach((skew) => {
       gsap.fromTo(
         skew,
         {
@@ -46,31 +46,16 @@ document.addEventListener('DOMContentLoaded', function () {
         {
           '--skew-before': '3deg',
           '--skew-after': '-3deg',
-          duration: 0.8,
+          duration: 0.5,
           scrollTrigger: {
             trigger: skew,
             start: 'top 85%',
             end: 'top 50%',
+            scrub: 1,
             toggleActions: 'play none none reverse',
           },
         },
       );
-    });
-  }
-
-  // Animate CTA if it exists
-  const cta = document.querySelector('.three-column .btn');
-  if (cta) {
-    gsap.from(cta, {
-      y: 20,
-      opacity: 0,
-      duration: 0.8,
-      scrollTrigger: {
-        trigger: cta,
-        start: 'top 85%',
-        end: 'top 50%',
-        toggleActions: 'play none none reverse',
-      },
     });
   }
 });
